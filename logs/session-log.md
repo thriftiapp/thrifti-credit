@@ -49,3 +49,8 @@ Next
 - Waitlist form built and published through the Tally connector: https://tally.so/r/YjRJYN
   (form id YjRJYN). Notifications to contact@thrifti.app. Hidden field `source` for
   tracking links, e.g. https://tally.so/r/YjRJYN?source=instagram
+
+### Next session to-do (AD, 2026-11-07)
+1. Find free startup law clinics in Ontario (university small business clinics) for a legal check of gift card interviews, consent wording, privacy page and interview script.
+2. Research faceless finance creators and named Facebook groups and subreddits for the launch plan.
+3. Rebuild the website in thrifti indigo and design the Facebook page.
