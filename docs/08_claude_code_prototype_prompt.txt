@@ -1,0 +1,71 @@
+NEXT TASK: thrifti clickable prototype (Phase 2)
+(Send in Claude Code after the website is live. Replace [PASTE TALLY FEEDBACK LINK], or leave it and the demo still works.)
+
+Same rules as the kickoff. Confirm your plan briefly before building.
+
+WHERE
+- Build it in D:\Claude\thrifti\site\demo\ so it publishes at thrifti.app/demo.
+- Plain HTML, CSS, JavaScript. No backend, no database, no real bank
+  connection. All data is fake and lives in a JavaScript file.
+- Add a noindex tag so search engines do not list it.
+- A fixed banner on every screen: "Demo with fake data. thrifti does not
+  offer loans today. Nothing here is a real offer."
+- Same look as the main site.
+
+PURPOSE
+Let interviewees and partners click through the idea so we can test:
+1. Do they understand the CARE Score?
+2. Do they trust it?
+3. Would they connect a real bank account for this?
+4. Does the offer feel fair and clear?
+
+SCREENS
+1. Welcome: short explanation, button "Try the demo".
+2. Pick a person: 4 fake personas with a one-line story each (below).
+3. Connect bank (simulated): looks like a bank picker, then a 2-second
+   "reading your last 12 months" step. Clearly say it is simulated.
+4. Your CARE Score: score from 300 to 900, a bar for each of the 5 parts,
+   and one plain sentence per part explaining why.
+5. Your options: if the score is 600 or above, show an illustrative
+   consolidation offer. If below, show a "not yet" screen with 3 concrete
+   things that would raise the score, and a referral to free credit
+   counselling. Never a dead end.
+6. Savings: compare current debt (card balances at 21.99 percent APR, paying
+   the same monthly amount) against one loan at 9 percent over 36 months.
+   Show monthly payment, total interest and interest saved. Use the standard
+   loan payment formula and show the assumptions. Label it "Illustration only".
+7. Feedback: 4 quick questions (understood the score? trust it? would connect
+   a real bank? anything confusing?) linked to [PASTE TALLY FEEDBACK LINK].
+
+CARE SCORE v0 (rules-based, fully transparent, no machine learning)
+Five parts, each scored 0 to 100, then weighted and scaled to 300 to 900:
+- Income stability, 25 percent
+- Expense predictability, 25 percent
+- Cash flow resilience, 20 percent
+- Payment behaviour, 20 percent (recent months count more)
+- Engagement, 10 percent (fixed value per persona in the demo)
+Put the formula in one commented function and document it in plain language
+in D:\Claude\thrifti\docs\care-score-v0.md. Flag judgement calls on weights
+and thresholds.
+
+PERSONAS (fictional, 12 months of generated data each)
+- Maria, 41, Toronto. Personal support worker, steady income, missed card
+  payments after a medical emergency 2 years ago, rent and bills always on
+  time. $14,000 card debt. Expected: approved.
+- Jay, 29, Montreal. Gig work, variable income, bills on time, often low
+  balance. $8,000 card debt. Expected: borderline.
+- Priya, 34, Calgary. Newcomer, thin credit file, stable salary for 10 months,
+  perfect bill payments. $6,000 card debt. Expected: approved.
+- Sam, 45, Halifax. Overdrafts, missed rent twice, debt growing monthly.
+  $22,000 card and payday debt. Expected: "not yet" with counselling referral.
+If a computed score does not match the expected outcome, tell me instead of
+quietly adjusting the data.
+
+TESTING
+- Write D:\Claude\thrifti\docs\prototype-test-script.md: what to say to a
+  tester, the 4 tasks, and what to observe.
+- Show me the demo locally before pushing. Then update the session log and
+  push both repos.
+
+Note: the demo tests understanding and trust only. It does not prove the
+score predicts repayment.
