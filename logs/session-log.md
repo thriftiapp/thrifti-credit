@@ -27,3 +27,13 @@ Blocked / waiting on AD
 Next
 - Put in the Tally link, commit, push both repositories, turn on Pages, add DNS records,
   enforce HTTPS.
+
+### Later on 2026-11-07
+- AD: credit stays separate from the grocery app, under the thrifti brand. Folder renamed
+  to `D:\Claude\thrifti-credit`. The website is now part of this one repository (no
+  separate site repository). Credit files briefly copied into the grocery app were
+  removed before any commit; the grocery repository is unchanged.
+- GitHub sign-in for the thriftiapp account now works on this computer (read access to
+  `thriftiapp/thrifti-app` confirmed).
+- Waiting on AD: create an empty private repository `thriftiapp/thrifti-credit`, the
+  Tally link, and a decision on where the website is hosted.
