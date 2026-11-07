@@ -44,3 +44,8 @@ Next
   thrifti products. The credit website colours move from teal to this indigo when it is
   rebuilt.
 - Launch plan doc: https://claude.ai/artifact/GLLviFbYCY8pvoBgko9kiH
+
+### Tally (2026-11-07)
+- Waitlist form built and published through the Tally connector: https://tally.so/r/YjRJYN
+  (form id YjRJYN). Notifications to contact@thrifti.app. Hidden field `source` for
+  tracking links, e.g. https://tally.so/r/YjRJYN?source=instagram

@@ -1,5 +1,5 @@
 // Set this to the published Tally form link, for example "https://tally.so/r/abc123".
-var TALLY_URL = "[PASTE TALLY LINK]";
+var TALLY_URL = "https://tally.so/r/YjRJYN";
 
 (function () {
   var ready = /^https:\/\/tally\.so\//.test(TALLY_URL);
