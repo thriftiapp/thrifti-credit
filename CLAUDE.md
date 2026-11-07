@@ -46,6 +46,15 @@ account. Read the prompts' folder and repository steps with that in mind.
    privacy impact assessment, with a human engineer reviewing production code.
 - Never use real customer financial or personal data in testing.
 
+## Brand standard (all thrifti communication)
+Decided by AD on 2026-11-07. Applies to everything thrifti: websites, social media,
+emails, documents, decks, posters.
+- Logo: the light thrifti mark on an indigo #4C5FD5 rounded square,
+  `brand/thrifti-logo-badge.svg`. Light-only mark for coloured backgrounds:
+  `brand/thrifti-logo.svg`. Indigo mark for white backgrounds: `brand/thrifti-logo-indigo.svg`.
+- Main brand colour: indigo #4C5FD5. The teal in the first site draft is replaced.
+- Name always "thrifti", lowercase.
+
 ## Domain and email (do not break)
 - Domain thrifti.app, DNS at AD's current registrar.
 - Email contact@thrifti.app on Zoho. Never change or delete MX, SPF, DKIM or Zoho
