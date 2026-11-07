@@ -37,3 +37,10 @@ Next
   `thriftiapp/thrifti-app` confirmed).
 - Waiting on AD: create an empty private repository `thriftiapp/thrifti-credit`, the
   Tally link, and a decision on where the website is hosted.
+
+### Brand decision (2026-11-07)
+- AD picked the logo as the light thrifti mark on an indigo (#4C5FD5) rounded square:
+  `brand/thrifti-logo-badge.svg` (same as `thrifti-logo-preview.svg`). Use it for all
+  thrifti products. The credit website colours move from teal to this indigo when it is
+  rebuilt.
+- Launch plan doc: https://claude.ai/artifact/GLLviFbYCY8pvoBgko9kiH
