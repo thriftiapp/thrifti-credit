@@ -1,33 +1,36 @@
-# thrifti (business files)
+# thrifti credit
 
-Summary of the kickoff message (`docs/07_claude_code_kickoff_prompt.txt`) and the
-handover (`docs/thrifti-handover.md`). Keep this file up to date.
+thrifti is the brand. It has two separate projects that must not be mixed:
+- **thrifti grocery**: the grocery price app, `D:\Claude\grocery-price-compare`
+  (GitHub `thriftiapp/thrifti-app`, deployed on Vercel). Do not touch it from here.
+- **thrifti credit**: this folder. Business files and the credit waitlist website.
 
-## Folder note
-This project lives in `D:\Claude\thrifti-business`, not `D:\Claude\thrifti` as the
-kickoff and prototype prompts say. Windows treats `thrifti` and `Thrifti` as the same
-folder, and `D:\Claude\Thrifti` is a separate research project (alternative credit
-scoring proof of concept). Read every `D:\Claude\thrifti\...` path in the prompts as
-`D:\Claude\thrifti-business\...`.
+The research proof of concept for the credit score is a third, separate folder:
+`D:\Claude\Thrifti` (Windows treats `thrifti` and `Thrifti` as the same name, which is
+why this project is `thrifti-credit`).
+
+Source material: `docs/thrifti-handover.md` and `docs/07_claude_code_kickoff_prompt.txt`.
+The prompts were written for `D:\Claude\thrifti` with two repositories and GitHub Pages.
+AD changed that on 2026-11-07: one repository, this folder, under the thriftiapp GitHub
+account. Read the prompts' folder and repository steps with that in mind.
 
 ## Working rules
 - Call the user AD. Plain, natural language. No em dashes. No contractions.
-- Blunt and fact based. Short replies. No flattery.
+- Blunt and fact based. Short replies. No flattery. Show results, not progress.
 - If unsure, say so. Never invent sources, numbers, APIs or commands.
 - If something is unclear, ask one question before acting.
-- Show results, not progress. Ask only real questions.
 - Documents for others include: "Generated with the support of AI. AI may have been
   used to collect information." Deliver documents as Word, not PDF.
 - End each reply that produces work with one line confirming these rules were followed.
 
-## About thrifti
+## About thrifti credit
 - Always "thrifti", all lowercase, everywhere.
 - Research-stage idea in Canada. Not incorporated. Not a lender.
 - Fair-rate debt consolidation (target 8 to 10 percent APR), later a debt relief bank,
   using a transparent CARE Score (income stability, expense predictability, cash flow
   resilience, payment behaviour on rent and bills, engagement). A licensed partner
   (credit union or Collabria) lends; thrifti scores, refers and supports.
-- Market figures are approximate and must be verified before use (see handover Part 3).
+- Market figures are approximate and must be verified before use (handover Part 3).
 - Open banking: Consumer-Driven Banking Act passed March 2026; final rules targeted late
   2026 or early 2027. Use an aggregator such as Flinks until the regulated channel is live.
 - First target: stable income, on-time bills, score hurt by a shock, Ontario or Quebec.
@@ -48,24 +51,21 @@ scoring proof of concept). Read every `D:\Claude\thrifti\...` path in the prompt
 - Email contact@thrifti.app on Zoho. Never change or delete MX, SPF, DKIM or Zoho
   verification records.
 
-## Storage and repositories
-- `D:\Claude\thrifti-business` = private GitHub repository "thrifti" (business files).
-- `site\` = the website, its own public repository "thrifti-site". `site/` is in the
-  parent `.gitignore`.
+## Folders
 - `docs\` plans and research. `research\` anonymized interview notes only.
 - `logs\session-log.md` dated summary of every session, decisions, next steps.
-- Never write to C:. End of every session: update the log, commit and push both repos.
-- Nothing confidential in the public repository.
-- GitHub is already connected for another project. Do not touch that connection.
+- `site\` the waitlist website: plain HTML, CSS, a little JavaScript, no framework, no
+  database. Tally link set in one place: `TALLY_URL` in `site/js/main.js`.
+- Git: one repository for everything, commits as "thrifti" <contact@thrifti.app>. The D
+  drive does not record file ownership, so git commands need
+  `-c safe.directory=D:/Claude/thrifti-credit`.
+- Never write to C:. End of every session: update the log, commit and push.
 
-## Website (site\)
-- Plain HTML, CSS, a little JavaScript. No framework, no database. GitHub Pages from main.
-- Waitlist form is Tally. The link is set in one place: `TALLY_URL` in `site/js/main.js`.
-  Until AD sends it, it is a placeholder and the buttons show a "coming soon" note.
-- Copy rules: grade 8 English, no em dashes, no contractions, no hype. Never promise
-  approval, a rate or a score increase.
+## Website copy rules
+Grade 8 English, no em dashes, no contractions, no hype. Never promise approval, a rate
+or a score increase.
 
 ## Next
 After the website, ask AD before starting anything else. Likely next: demo at
-thrifti.app/demo (`docs/08_claude_code_prototype_prompt.txt`), interview guide,
-NGO outreach tracker.
+`/demo` (`docs/08_claude_code_prototype_prompt.txt`), interview guide, NGO outreach
+tracker.
