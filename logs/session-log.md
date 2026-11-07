@@ -54,3 +54,4 @@ Next
 1. Find free startup law clinics in Ontario (university small business clinics) for a legal check of gift card interviews, consent wording, privacy page and interview script.
 2. Research faceless finance creators and named Facebook groups and subreddits for the launch plan.
 3. Rebuild the website in thrifti indigo and design the Facebook page.
+4. Competitor map: who already does cash-flow scoring, rent reporting, fair-rate consolidation and newcomer credit in Canada and the US, and what thrifti does differently.
