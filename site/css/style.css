@@ -210,3 +210,6 @@ details p { margin: 0; padding: 0 22px 18px; color: var(--muted); }
 
 .ai-note { max-width: 70ch; font-size: .9375rem; color: var(--muted); background: var(--surface); border: 1px solid var(--indigo-line); border-left: 4px solid var(--indigo); border-radius: 0 12px 12px 0; padding: 14px 18px; margin: 20px 0 0; }
 .ai-note strong { color: var(--ink); }
+
+.hero-tagline { margin: 0 0 14px; font-size: clamp(1.25rem, 3.2vw, 1.625rem); font-weight: 800; letter-spacing: -0.01em; color: var(--indigo); line-height: 1.2; }
+.hero-tagline::before { content: ""; display: inline-block; width: 28px; height: 4px; border-radius: 4px; background: var(--indigo); vertical-align: middle; margin-right: 12px; transform: translateY(-2px); }
