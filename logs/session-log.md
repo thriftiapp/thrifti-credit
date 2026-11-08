@@ -60,3 +60,5 @@ Next
 - Site redesigned in indigo (not pushed). Tagline A/B test: A "AI that works for the people", B "AI for the people", C "Using AI for the people", D "AI for Canadians"; version saved in Tally hidden field `tagline`.
 - Gift card for interviews dropped for now (AD). Removed from the site and the Tally form. Older docs (launch plan, handover, NGO emails) still mention $25 and need updating before use.
 - Privacy page now says Tally may store data outside Canada. "How we use AI" note added: CARE Score is rules-based today.
+- LIVE 2026-11-08: https://thrifti-credit.blue-shape-8f74.workers.dev (Cloudflare Workers, deploys on every push to main). Tested: all pages and files load, four taglines A-D, calculator, waitlist link with source and tagline, privacy page, 404 page, font loads.
+- Not yet: thrifti.app domain (keep Zoho email records safe), registered company name in footer, update older docs that mention the $25 gift card.
