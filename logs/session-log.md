@@ -57,6 +57,6 @@ Next
 4. Competitor map: who already does cash-flow scoring, rent reporting, fair-rate consolidation and newcomer credit in Canada and the US, and what thrifti does differently.
 
 ### 2026-11-08
-- Site redesigned in indigo (not pushed). Tagline A/B test: A "AI that works for the people", B "AI for the people"; version saved in Tally hidden field `tagline`.
+- Site redesigned in indigo (not pushed). Tagline A/B test: A "AI that works for the people", B "AI for the people", C "Using AI for the people"; version saved in Tally hidden field `tagline`.
 - Gift card for interviews dropped for now (AD). Removed from the site and the Tally form. Older docs (launch plan, handover, NGO emails) still mention $25 and need updating before use.
 - Privacy page now says Tally may store data outside Canada. "How we use AI" note added: CARE Score is rules-based today.

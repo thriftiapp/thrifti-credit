@@ -9,11 +9,12 @@ var TALLY_URL = "https://tally.so/r/YjRJYN";
 
   // Tagline test: each visitor sees one version, kept on return visits, and the
   // version travels into the form so sign-ups can be compared per version.
-  var TAGLINES = { A: "AI that works for the people", B: "AI for the people" };
+  var TAGLINES = { A: "AI that works for the people", B: "AI for the people", C: "Using AI for the people" };
+  var KEYS = ["A", "B", "C"];
   var variant = null;
   try { variant = localStorage.getItem("thrifti_tagline"); } catch (e) {}
   if (!TAGLINES[variant]) {
-    variant = Math.random() < 0.5 ? "A" : "B";
+    variant = KEYS[Math.floor(Math.random() * KEYS.length)];
     try { localStorage.setItem("thrifti_tagline", variant); } catch (e) {}
   }
   var tags = document.querySelectorAll(".js-tagline");
