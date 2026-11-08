@@ -20,7 +20,7 @@ var TALLY_URL = "https://tally.so/r/YjRJYN";
   var tags = document.querySelectorAll(".js-tagline");
   for (var t = 0; t < tags.length; t++) tags[t].textContent = TAGLINES[variant];
 
-  var formUrl = TALLY_URL + "?source=" + encodeURIComponent(source) + "&tagline=" + variant;
+  var formUrl = TALLY_URL + "?source=" + encodeURIComponent(source) + "&tagline=" + variant + "&tagline_text=" + encodeURIComponent(TAGLINES[variant]);
 
   var links = document.querySelectorAll(".js-waitlist");
   for (var i = 0; i < links.length; i++) {
