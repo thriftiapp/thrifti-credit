@@ -1,0 +1,9 @@
+{
+  // thrifti credit waitlist site: static files only, served from ./site.
+  "name": "thrifti-credit",
+  "compatibility_date": "2026-11-08",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page"
+  }
+}
