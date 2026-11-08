@@ -4,8 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>thrifti | fairer credit, research stage</title>
-<meta name="description" content="thrifti is a research project exploring fairer debt consolidation for Canadians, based on real financial habits, not just a credit score.">
+<meta name="description" content="thrifti is a research project in Canada exploring fairer debt consolidation, based on how you actually manage money, not just a credit score.">
+<meta name="theme-color" content="#4C5FD5">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -13,83 +17,182 @@
 
 <header class="site-header">
   <div class="wrap header-row">
-    <a class="logo" href="./" aria-label="thrifti home">thrifti</a>
-    <a class="header-link js-waitlist" href="#join">Join the waitlist</a>
+    <a class="brand" href="./" aria-label="thrifti home">
+      <img src="img/logo-badge.svg" alt="" width="36" height="36">
+      <span>thrifti</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#calculator">Debt calculator</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">Questions</a>
+    </nav>
+    <a class="btn btn-small js-waitlist" href="#join">Join the waitlist</a>
   </div>
 </header>
 
 <main id="main">
+
   <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Research stage in Canada</p>
+        <h1>Credit that looks at how you <em>actually</em> manage money</h1>
+        <p class="lead">Millions of Canadians pay 20 percent or more on credit cards, even when they pay rent and bills on time. We are exploring a fairer way to consolidate debt, based on your real habits, not just a credit score.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary js-waitlist" href="#join">Join the waitlist</a>
+          <a class="btn btn-ghost" href="#calculator">See what your debt costs</a>
+        </div>
+        <p class="fineprint">Free to join. Not a loan application. No credit check.</p>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="card card-main">
+          <div class="card-head">
+            <span class="card-title">Your money habits</span>
+            <span class="pill">Example</span>
+          </div>
+          <ul class="habits">
+            <li><span class="h-label">Rent</span><span class="months"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="h-val">12 of 12 on time</span></li>
+            <li><span class="h-label">Phone and utilities</span><span class="months"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="h-val">12 of 12 on time</span></li>
+            <li><span class="h-label">Income</span><span class="months"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span class="h-val">Steady every month</span></li>
+          </ul>
+          <div class="card-foot">One hard month in 2024 lowered the credit score. The habits tell a different story.</div>
+        </div>
+        <div class="card card-float">
+          <span class="float-label">Card interest today</span>
+          <span class="float-big">21.99%</span>
+          <span class="float-sub">on $8,000</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="honesty-strip" aria-label="Where things stand">
+    <div class="wrap honesty-row">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v6M12 16.5v.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      <p><strong>Where things stand:</strong> thrifti is an idea at the research stage. We do not offer loans or credit today, and joining the waitlist is not an application. We are talking to people first to learn whether this would really help.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="problem-title">
     <div class="wrap">
-      <p class="tag">Research stage</p>
-      <h1>Credit that looks at how you actually manage money</h1>
-      <p class="lead">Millions of Canadians pay 20 percent or more on credit cards, even when they pay rent and bills on time. We are exploring a fairer way to consolidate debt, based on your real financial habits, not just a credit score.</p>
-      <a class="button js-waitlist" href="#join">Join the waitlist</a>
-      <p class="soon" hidden>The waitlist form is not open yet. Please check back soon, or email <a href="mailto:contact@thrifti.app">contact@thrifti.app</a>.</p>
-    </div>
-  </section>
-
-  <section class="band" aria-labelledby="problem-title">
-    <div class="wrap two-col">
-      <div>
-        <h2 id="problem-title">The problem</h2>
-        <ul class="points">
-          <li>A single bad month, like a job loss or a medical bill, can lower your credit score for years.</li>
-          <li>A lower score usually means higher interest, which makes debt harder to pay off.</li>
-          <li>Credit scores often ignore things like paying rent and utilities on time.</li>
-        </ul>
-      </div>
-      <div>
-        <h2 id="idea-title">The idea</h2>
-        <ul class="points">
-          <li>Look at stable income and on-time payments for rent and essential bills.</li>
-          <li>Offer one consolidation option at a fair rate, through a licensed lending partner.</li>
-          <li>Show clearly how every decision is made, with no hidden fees.</li>
-        </ul>
+      <p class="kicker">The problem</p>
+      <h2 id="problem-title">Paying your bills should count for something</h2>
+      <div class="grid-3">
+        <article class="feature">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 4 8-9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="scale(1,-1) translate(0,-24)"/></svg></span>
+          <h3>One bad month lasts for years</h3>
+          <p>A job loss or a medical bill can lower your credit score for a long time, even after life is back on track.</p>
+        </article>
+        <article class="feature">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M19 5L5 19M7 6.5a1.5 1.5 0 1 0 0 .01M17 17.5a1.5 1.5 0 1 0 0 .01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></span>
+          <h3>A lower score costs more</h3>
+          <p>A lower score usually means higher interest. That makes debt harder to pay off, even when you pay every month.</p>
+        </article>
+        <article class="feature">
+          <span class="icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 11l8-6 8 6v8a1 1 0 0 1-1 1h-4v-5h-6v5H5a1 1 0 0 1-1-1z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>
+          <h3>Rent often does not count</h3>
+          <p>Credit scores often ignore years of paying rent, utilities and your phone bill on time.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section aria-labelledby="honest-title">
+  <section id="calculator" class="section section-tint" aria-labelledby="calc-title">
+    <div class="wrap calc-grid">
+      <div class="calc-intro">
+        <p class="kicker">Debt calculator</p>
+        <h2 id="calc-title">What is your card debt really costing you?</h2>
+        <p>Enter your balance, your card's interest rate and what you pay each month. See how long it takes to pay off, and how much goes to interest.</p>
+        <p class="note">Your numbers stay on your device. Nothing is saved or sent.</p>
+      </div>
+
+      <form class="calc" id="calc" novalidate>
+        <div class="field">
+          <label for="bal">Card balance</label>
+          <div class="input-wrap"><span>$</span><input id="bal" inputmode="decimal" value="8000" aria-describedby="calc-error"></div>
+        </div>
+        <div class="field">
+          <label for="apr">Interest rate</label>
+          <div class="input-wrap"><input id="apr" inputmode="decimal" value="21.99"><span>%</span></div>
+        </div>
+        <div class="field">
+          <label for="pay">Monthly payment</label>
+          <div class="input-wrap"><span>$</span><input id="pay" inputmode="decimal" value="250"></div>
+        </div>
+        <p class="calc-error" id="calc-error" role="alert"></p>
+
+        <div class="results" aria-live="polite">
+          <div class="result">
+            <span class="r-label">Time to pay off</span>
+            <span class="r-big" id="r-time">-</span>
+          </div>
+          <div class="result">
+            <span class="r-label">Total interest</span>
+            <span class="r-big" id="r-int">-</span>
+          </div>
+        </div>
+
+        <div class="compare">
+          <div class="bar-row"><span>At your rate</span><div class="bar"><b id="bar-you"></b></div><span id="c-you">-</span></div>
+          <div class="bar-row"><span>At 9% (example)</span><div class="bar"><b id="bar-ex" class="ex"></b></div><span id="c-ex">-</span></div>
+          <p class="compare-note" id="c-save"></p>
+        </div>
+        <p class="fineprint">Illustration only, using a fixed payment and monthly interest. The 9 percent line is an example, not an offer. thrifti does not lend money today.</p>
+      </form>
+    </div>
+  </section>
+
+  <section id="how" class="section" aria-labelledby="how-title">
     <div class="wrap">
-      <div class="honesty">
-        <h2 id="honest-title">Where things stand</h2>
-        <p>thrifti is an idea at the research stage. We do not offer loans or credit today, and joining the waitlist is not an application. We are talking to people first to learn whether this would really help.</p>
+      <p class="kicker">How it would work</p>
+      <h2 id="how-title">A score you can understand</h2>
+      <p class="section-lead">The idea is a transparent score, called the CARE Score, built from five things you can see and control.</p>
+      <ol class="care">
+        <li><span class="care-n">1</span><div><h3>Income stability</h3><p>Is money coming in regularly?</p></div></li>
+        <li><span class="care-n">2</span><div><h3>Steady spending</h3><p>Are your regular costs predictable?</p></div></li>
+        <li><span class="care-n">3</span><div><h3>Cash flow cushion</h3><p>Is there some room left after bills?</p></div></li>
+        <li><span class="care-n">4</span><div><h3>Rent and bills paid</h3><p>Do you pay rent, utilities and your phone on time?</p></div></li>
+        <li><span class="care-n">5</span><div><h3>Staying in touch</h3><p>Do you keep in contact when things get hard?</p></div></li>
+      </ol>
+      <div class="steps">
+        <div class="step"><span>01</span><p>You join the waitlist and, if you like, talk to us for 30 minutes.</p></div>
+        <div class="step"><span>02</span><p>We test the idea with real people and a licensed lending partner, such as a credit union.</p></div>
+        <div class="step"><span>03</span><p>If it works, one clear consolidation option, with every decision explained and no hidden fees.</p></div>
       </div>
     </div>
   </section>
 
-  <section id="join" class="band" aria-labelledby="shape-title">
-    <div class="wrap narrow">
-      <h2 id="shape-title">Help us shape it</h2>
-      <p>We are looking for people in Canada who carry credit card or other high-interest debt for a 30-minute conversation. Participants receive a $25 gift card as thanks.</p>
-      <a class="button js-waitlist" href="#join">Join the waitlist</a>
-      <p class="soon" hidden>The waitlist form is not open yet. Please check back soon, or email <a href="mailto:contact@thrifti.app">contact@thrifti.app</a>.</p>
+  <section id="join" class="section join" aria-labelledby="join-title">
+    <div class="wrap join-card">
+      <div>
+        <h2 id="join-title">Help us shape it</h2>
+        <p>We are looking for people in Canada who carry credit card or other high-interest debt. Join the waitlist, and if you want, tell us your story in a 30-minute conversation. Participants receive a $25 gift card as thanks.</p>
+      </div>
+      <div class="join-actions">
+        <a class="btn btn-light js-waitlist" href="#join">Join the waitlist</a>
+        <p class="fineprint light">Takes about one minute. We only ask for your name, email and province.</p>
+      </div>
     </div>
   </section>
 
-  <section aria-labelledby="faq-title">
+  <section id="faq" class="section" aria-labelledby="faq-title">
     <div class="wrap narrow">
-      <h2 id="faq-title">Questions</h2>
-      <details>
-        <summary>Is this a loan application?</summary>
-        <p>No. thrifti does not lend money today.</p>
-      </details>
-      <details>
-        <summary>Will you check my credit?</summary>
-        <p>No. We only collect your name, email and province.</p>
-      </details>
-      <details>
-        <summary>Who is behind thrifti?</summary>
-        <p>A small team with long experience in finance and financial inclusion. You can reach us at <a href="mailto:contact@thrifti.app">contact@thrifti.app</a>.</p>
-      </details>
+      <p class="kicker">Questions</p>
+      <h2 id="faq-title">Good to know</h2>
+      <details><summary>Is this a loan application?</summary><p>No. thrifti does not lend money today. Joining the waitlist is not an application.</p></details>
+      <details><summary>Will you check my credit?</summary><p>No. We only collect your name, email and province. Two questions about your debt and bills are optional and ask for ranges, not exact amounts.</p></details>
+      <details><summary>Does joining affect my credit score?</summary><p>No. We do not contact any credit bureau.</p></details>
+      <details><summary>What happens to my information?</summary><p>It is stored by our form provider, Tally, and never sold. You can ask us to delete it at any time. See our <a href="privacy.html">privacy page</a>.</p></details>
+      <details><summary>Who is behind thrifti?</summary><p>A small team with long experience in finance and financial inclusion, based in Ontario. You can reach us at <a href="mailto:contact@thrifti.app">contact@thrifti.app</a>.</p></details>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
   <div class="wrap footer-row">
-    <p>&copy; 2026 thrifti. Research project.</p>
+    <a class="brand brand-footer" href="./" aria-label="thrifti home"><img src="img/logo-badge.svg" alt="" width="28" height="28"><span>thrifti</span></a>
+    <p>&copy; 2026 thrifti. Research project. Not a lender.</p>
     <p><a href="mailto:contact@thrifti.app">contact@thrifti.app</a> &middot; <a href="privacy.html">Privacy</a></p>
   </div>
 </footer>
