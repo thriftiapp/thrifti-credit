@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("../fonts/plus-jakarta-sans-latin-wght.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --indigo: #4C5FD5;
   --indigo-dark: #3646B5;
@@ -59,6 +67,10 @@ p { margin: 0 0 1em; }
 .btn-light:hover { background: var(--indigo-soft); color: var(--indigo-deep); }
 .btn-small { min-height: 42px; padding: 0 18px; font-size: .9375rem; background: var(--indigo); color: #fff; }
 .btn-small:hover { background: var(--indigo-dark); color: #fff; }
+
+.brand-text { display: grid; line-height: 1.05; }
+.tagline { font-size: .6875rem; font-weight: 700; letter-spacing: .02em; color: var(--indigo); white-space: nowrap; }
+.footer-tagline { color: var(--indigo); font-weight: 700; }
 
 .site-header {
   position: sticky; top: 0; z-index: 10;
