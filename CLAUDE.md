@@ -65,6 +65,9 @@ emails, documents, decks, posters.
 - `logs\session-log.md` dated summary of every session, decisions, next steps.
 - `site\` the waitlist website: plain HTML, CSS, a little JavaScript, no framework, no
   database. Tally link set in one place: `TALLY_URL` in `site/js/main.js`.
+- Live at https://thrifti-credit.blue-shape-8f74.workers.dev (Cloudflare Workers;
+  `wrangler.jsonc` serves `site/`). Every push to main goes live, so push only after
+  AD approves the design.
 - Git: one repository for everything, commits as "thrifti" <contact@thrifti.app>. The D
   drive does not record file ownership, so git commands need
   `-c safe.directory=D:/Claude/thrifti-credit`.
