@@ -62,3 +62,5 @@ Next
 - Privacy page now says Tally may store data outside Canada. "How we use AI" note added: CARE Score is rules-based today.
 - LIVE 2026-11-08: https://thrifti-credit.blue-shape-8f74.workers.dev (Cloudflare Workers, deploys on every push to main). Tested: all pages and files load, four taglines A-D, calculator, waitlist link with source and tagline, privacy page, 404 page, font loads.
 - Not yet: thrifti.app domain (keep Zoho email records safe), registered company name in footer, update older docs that mention the $25 gift card.
+- Removed the $25 interview gift card from docs (handover, kickoff prompt, MVP steps, NGO emails) and from the launch plan and handover Claude docs. $500 NGO coordination fee kept. Original copies in D:\Claude\Thrifti	hrifti 2.0\chat_import are kept unchanged as the archive.
+- thrifti.app currently serves the GROCERY app (Vercel: A 216.198.79.1, www CNAME vercel-dns). DNS at Google Cloud DNS. Zoho MX mx/mx2/mx3.zoho.eu, SPF include:zohomail.eu, DKIM zoho._domainkey, google-site-verification TXT. Domain for credit site not set up yet: waiting on AD.

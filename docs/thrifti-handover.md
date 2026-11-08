@@ -102,7 +102,7 @@ Caution: most of this research is from the US and on mortgages. It supports the 
 ### NGO partners for validation
 
 - Credit counselling agencies, financial literacy programs, newcomer services, housing organisations.
-- Validation email templates were drafted. Key message: this is only an idea, it is research, interviewees receive $25, the organisation receives $500, and nothing is sold.
+- Validation email templates were drafted. Key message: this is only an idea, it is research, the organisation receives $500 for coordinating, and nothing is sold.
 
 ### Grants and funding (verify eligibility directly)
 
@@ -179,7 +179,7 @@ PAGE CONTENT
 - The problem: a single bad month can lower your score for years; a lower score usually means higher interest; scores often ignore on-time rent and utilities.
 - The idea: look at stable income and on-time essential payments; one consolidation option at a fair rate through a licensed lending partner; clear decisions, no hidden fees.
 - Honesty box: thrifti is an idea at the research stage. We do not offer loans or credit today, and joining the waitlist is not an application.
-- Help us shape it: 30-minute conversations with people in Canada carrying credit card or high-interest debt, $25 gift card as thanks.
+- Help us shape it: 30-minute conversations with people in Canada carrying credit card or high-interest debt.
 - FAQ: Is this a loan application? No. Will you check my credit? No, we only collect name, email and province. Who is behind thrifti? A small team with long experience in finance and financial inclusion, contact@thrifti.app.
 - Footer: (c) 2026 thrifti. Research project. contact@thrifti.app. Privacy link.
 - privacy.html: what we collect, why, stored in Tally, never sold, deletion requests to contact@thrifti.app, follows PIPEDA. Marked "Draft, last updated November 2026".
