@@ -207,3 +207,6 @@ details p { margin: 0; padding: 0 22px 18px; color: var(--muted); }
 
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+.ai-note { max-width: 70ch; font-size: .9375rem; color: var(--muted); background: var(--surface); border: 1px solid var(--indigo-line); border-left: 4px solid var(--indigo); border-radius: 0 12px 12px 0; padding: 14px 18px; margin: 20px 0 0; }
+.ai-note strong { color: var(--ink); }

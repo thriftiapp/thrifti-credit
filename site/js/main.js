@@ -6,7 +6,20 @@ var TALLY_URL = "https://tally.so/r/YjRJYN";
   // so the waitlist shows which channel brought each sign-up.
   var params = new URLSearchParams(window.location.search);
   var source = params.get("source") || params.get("utm_source") || "website";
-  var formUrl = TALLY_URL + "?source=" + encodeURIComponent(source);
+
+  // Tagline test: each visitor sees one version, kept on return visits, and the
+  // version travels into the form so sign-ups can be compared per version.
+  var TAGLINES = { A: "AI that works for the people", B: "AI for the people" };
+  var variant = null;
+  try { variant = localStorage.getItem("thrifti_tagline"); } catch (e) {}
+  if (!TAGLINES[variant]) {
+    variant = Math.random() < 0.5 ? "A" : "B";
+    try { localStorage.setItem("thrifti_tagline", variant); } catch (e) {}
+  }
+  var tags = document.querySelectorAll(".js-tagline");
+  for (var t = 0; t < tags.length; t++) tags[t].textContent = TAGLINES[variant];
+
+  var formUrl = TALLY_URL + "?source=" + encodeURIComponent(source) + "&tagline=" + variant;
 
   var links = document.querySelectorAll(".js-waitlist");
   for (var i = 0; i < links.length; i++) {
