@@ -66,8 +66,9 @@ if (typeof module !== "undefined") module.exports = { simulate: simulate, yearRo
   });
   document.querySelectorAll(".nav-links a").forEach(function (a) { a.addEventListener("click", function () { nav.classList.remove("open"); }); });
 
-  // Hero ticker: Equifax Q4 2025 card balances x the TD 21.99% example rate, per second.
-  var PER_SEC = (131e9 * 0.2199) / 31556952;
+  // Hero ticker: Equifax Q4 2025 card balances x 46% (Bank of Canada share of cardholders
+  // carrying a balance, used as an assumed interest-bearing share) x 21.99%, per second.
+  var PER_SEC = (131e9 * 0.46 * 0.2199) / 31556952;
   $("per-sec").textContent = cad(PER_SEC);
   var t0 = Date.now();
   setInterval(function () { $("ticker").textContent = cad((Date.now() - t0) / 1000 * PER_SEC); }, 200);
@@ -99,8 +100,8 @@ if (typeof module !== "undefined") module.exports = { simulate: simulate, yearRo
     } else if (mode === "bank") {
       sum.innerHTML = "At today's 21.99%, you pay <b class=\"ember\">" + cad(here.interest) + "</b> in interest and the balance is finally gone in <b>" + (yr.paidYear || "more than 12 years") + "</b>.";
     } else {
-      var saved = bank.on && bank.paid && here.paid ? " <b class=\"mint\">" + cad(bank.interest - here.interest) + "</b> stays with you instead of the bank." : "";
-      sum.innerHTML = "Same payment, a rate priced from your habits: debt-free in <b>" + (yr.paidYear || "more than 12 years") + "</b>." + saved;
+      var saved = bank.on && bank.paid && here.paid ? " <b class=\"mint\">" + cad(bank.interest - here.interest) + "</b> would stay with you instead of going to interest." : "";
+      sum.innerHTML = "Same payment at the 9.4% example rate: debt-free in <b>" + (yr.paidYear || "more than 12 years") + "</b>." + saved;
     }
     var trap = $("trap"), monthly = rBal * CARD / 1200;
     trap.hidden = rPay > monthly;
@@ -143,9 +144,9 @@ if (typeof module !== "undefined") module.exports = { simulate: simulate, yearRo
     arc.style.stroke = color;
     arc.style.strokeDashoffset = LEN * (1 - Math.max(0, Math.min(1, apr / 24)));
     var n = $("apr-num"); n.textContent = apr.toFixed(1); n.parentNode.style.color = color;
-    $("dial-cap").textContent = on === 0 ? "This is the rate the card gives you: one number, set by a formula you never see."
+    $("dial-cap").textContent = on === 0 ? "This is the card rate: one number, set by a formula you never see."
       : on < 3 ? "Every habit you verify is evidence the old score cannot read. " + on + " of 3 showing."
-      : "Three habits, three receipts. The bank still sees \"fair, 21.99%\". thrifti sees you.";
+      : "Three habits, three receipts. A credit score alone sees none of them.";
     var a = simulate(8400, CARD, 250), b = simulate(8400, apr, 250);
     $("row-bank").textContent = human(a.months) + " · " + cad(a.interest);
     $("dial-apr").textContent = apr.toFixed(1) + "%";
@@ -168,7 +169,7 @@ if (typeof module !== "undefined") module.exports = { simulate: simulate, yearRo
     A: [["CONNECT", "Your bank ·4821 · read-only, revocable any time", "plain"], ["READ", "24 months of transactions", "plain"],
         ["CHECK", "card minimums · 14/14 paid on time", "ok"], ["CHECK", "savings auto-deposit · $25 × 9-week streak", "ok"],
         ["CHECK", "rent · paid on the 1st, 12/12 months", "ok"], ["CHECK", "overdrafts, last 6 months · 0", "ok"],
-        ["EXAMPLE", "9.4% APR, because of the evidence above", "final-ok"], ["BANK", "same file · score reads \"662\" · priced 21.99%", "hot"]],
+        ["EXAMPLE", "9.4% example rate, based on the evidence above", "final-ok"], ["COMPARE", "judged on a score alone, this file could stay at a card rate like 21.99%", "hot"]],
     B: [["CONNECT", "Your bank ·9034 · read-only, revocable any time", "plain"], ["READ", "12 months of transactions", "plain"],
         ["CHECK", "card minimums · 3 missed in the last 90 days", "hot"], ["CHECK", "savings · no streak yet", "plain"],
         ["EXAMPLE", "not yet: a rebuild window, not a rejection", "final-wait"], ["RE-READ", "we look again in 60 days · no penalty for asking", "plain"]]
