@@ -57,22 +57,22 @@ if (typeof module !== "undefined") module.exports = { simulate: simulate, yearRo
   // The Tally form already has hidden "tagline" fields; reusing them records which design a sign-up saw.
   // Headline test: each visitor sees one of five headlines, kept on return visits, and it travels into the form.
   var TAGLINES = {
-    A: ["AI that works for ", "the people", ""],
-    B: ["AI for ", "the people", ""],
-    C: ["Using AI for ", "the people", ""],
-    D: ["AI for ", "Canadians", ""],
-    E: ["Credit that looks at how you ", "actually", " manage money"]
+    A: ["", "People and AI", ", working for you"],
+    B: ["Smart tools. ", "Real people.", " Fairer credit."],
+    C: ["AI does the math. ", "People", " make the call."],
+    D: ["Credit that looks at how you ", "actually", " manage money"],
+    E: ["Built by people, powered by AI, for ", "the people", ""]
   };
   var KEYS = ["A", "B", "C", "D", "E"], v = null;
-  try { v = localStorage.getItem("thrifti_v2_headline"); } catch (e) {}
+  try { v = localStorage.getItem("thrifti_v2_headline_h"); } catch (e) {}
   if (!TAGLINES[v]) {
     v = KEYS[Math.floor(Math.random() * KEYS.length)];
-    try { localStorage.setItem("thrifti_v2_headline", v); } catch (e) {}
+    try { localStorage.setItem("thrifti_v2_headline_h", v); } catch (e) {}
   }
   var tl = TAGLINES[v], plain = tl.join("");
   $("tagline").innerHTML = tl[0] + "<em>" + tl[1] + "</em>" + tl[2];
   $("foot-tag").textContent = plain + ".";
-  var formUrl = TALLY_URL + "?source=" + encodeURIComponent(source) + "&tagline=V2-" + v + "&tagline_text=" + encodeURIComponent(plain);
+  var formUrl = TALLY_URL + "?source=" + encodeURIComponent(source) + "&tagline=V2H-" + v + "&tagline_text=" + encodeURIComponent(plain);
   document.querySelectorAll(".js-waitlist").forEach(function (a) { a.href = formUrl; a.rel = "noopener"; });
 
   var nav = $("nav");
