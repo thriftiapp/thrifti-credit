@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>thrifti app look</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--brand:#4C5FD5;--brand-d:#3646b0;--brand-l:#eef0fd;--amber:#F5A524;--amber-l:#fff4df;--ink:#16182b;--mute:#6b6f86;--line:#e6e7f0;--bg:#f4f5fa;--card:#fff;--ok:#1f9d6b;--ok-l:#e3f6ee;--page:#e9eaf3}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eef0ff;--mute:#a3a7c2;--line:#2b2f4a;--bg:#12142a;--card:#1b1e38;--brand-l:#252a55;--amber-l:#3a2f17;--ok-l:#163a2c;--page:#0b0c1c}}
+:root[data-theme="dark"]{--ink:#eef0ff;--mute:#a3a7c2;--line:#2b2f4a;--bg:#12142a;--card:#1b1e38;--brand-l:#252a55;--amber-l:#3a2f17;--ok-l:#163a2c;--page:#0b0c1c}
+*{box-sizing:border-box}body{margin:0;background:var(--page);font-family:Inter,system-ui,sans-serif;color:var(--ink);padding:24px 16px}
+.top{max-width:1180px;margin:0 auto 20px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.top h1{font-size:20px;margin:0}.top p{margin:4px 0 0;color:var(--mute);font-size:13px}
+.toggle{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font:600 13px Inter;cursor:pointer}
+.row{display:flex;flex-wrap:wrap;gap:28px;justify-content:center;max-width:1180px;margin:auto}
+.phone{width:360px;max-width:100%;background:var(--bg);border-radius:38px;border:10px solid #0d0e1a;box-shadow:0 20px 50px rgba(20,24,60,.25);overflow:hidden;display:flex;flex-direction:column;min-height:760px}
+.cap{text-align:center;color:var(--mute);font-size:13px;margin-top:10px;font-weight:600}
+.status{display:flex;justify-content:space-between;padding:10px 22px 4px;font-size:12px;font-weight:600}
+.hdr{display:flex;justify-content:space-between;align-items:center;padding:8px 18px 4px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:18px;letter-spacing:-.3px}
+.badge{width:30px;height:30px;border-radius:9px;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:15px;font-weight:800}
+.body{padding:8px 16px 16px;flex:1;display:flex;flex-direction:column;gap:12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px}
+.hero{background:linear-gradient(150deg,var(--brand),#6b7cf0);color:#fff;border:0}
+.hero .s{opacity:.85;font-size:13px}
+.big{font-size:40px;font-weight:800;letter-spacing:-1px;line-height:1}
+.pill{display:inline-block;border-radius:999px;padding:4px 10px;font-size:12px;font-weight:700}
+.p-ok{background:var(--ok-l);color:var(--ok)}.p-b{background:rgba(255,255,255,.2);color:#fff}.p-am{background:var(--amber-l);color:#9a6400}
+h3{margin:0 0 8px;font-size:15px}.m{color:var(--mute);font-size:13px}
+.bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}.bar i{display:block;height:100%;background:var(--brand);border-radius:99px}
+.hero .bar{background:rgba(255,255,255,.25)}.hero .bar i{background:#fff}
+.tree{display:flex;justify-content:center;padding:4px 0}
+.badges{display:flex;gap:8px;overflow:hidden}
+.b{flex:0 0 auto;width:74px;text-align:center;font-size:11px;font-weight:600;color:var(--mute)}
+.b .ic{width:52px;height:52px;margin:0 auto 6px;border-radius:16px;display:grid;place-items:center;font-size:22px;background:var(--brand-l)}
+.b.lock .ic{filter:grayscale(1);opacity:.45}
+.nav{display:flex;justify-content:space-around;padding:10px 6px 16px;border-top:1px solid var(--line);background:var(--card);font-size:11px;color:var(--mute);font-weight:600}
+.nav span{display:flex;flex-direction:column;align-items:center;gap:3px}.nav .on{color:var(--brand)}
+.nav i{font-style:normal;font-size:18px}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+td{padding:7px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+td.n{text-align:right;font-weight:700;white-space:nowrap}
+.mini{height:6px;border-radius:9px;background:var(--line);margin-top:4px;overflow:hidden}.mini i{display:block;height:100%;background:var(--brand)}
+.add i{background:var(--amber)}
+.btn{display:block;text-align:center;border-radius:14px;padding:14px;font-weight:700;font-size:15px;background:var(--brand);color:#fff;text-decoration:none}
+.btn.ghost{background:transparent;color:var(--brand);border:1.5px solid var(--brand)}
+.kv{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}.kv b{font-weight:700}
+.save{background:var(--ok-l);color:var(--ok);border-radius:14px;padding:12px;font-weight:700;text-align:center}
+.step{display:flex;gap:10px;align-items:center;font-size:13px;padding:5px 0}
+.dot{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;color:#fff;background:var(--ok)}
+.dot.wait{background:var(--line);color:var(--mute)}
+.note{font-size:11.5px;color:var(--mute);text-align:center}
+.gauge{position:relative;margin:14px 0 4px}.gtrack{display:flex;height:10px;border-radius:99px;overflow:hidden;gap:2px}
+.gtrack span:nth-child(1){background:rgba(255,255,255,.28)}.gtrack span:nth-child(2){background:rgba(255,255,255,.45)}.gtrack span:nth-child(3){background:rgba(255,255,255,.65)}.gtrack span:nth-child(4){background:#fff}
+.gmark{position:absolute;top:-5px;width:4px;height:20px;border-radius:3px;background:#F5A524;box-shadow:0 0 0 2px rgba(0,0,0,.15)}
+.glabels{display:flex;justify-content:space-between;font-size:10.5px;opacity:.85}
+.legend{display:flex;justify-content:space-between;font-size:11.5px;color:var(--mute);font-weight:600}.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:4px;vertical-align:-1px}.more{margin-top:10px;font-size:12.5px}.more summary{color:var(--brand);font-weight:600;cursor:pointer}.more .m{margin-top:6px}
+.foot{max-width:1180px;margin:22px auto 0;color:var(--mute);font-size:12.5px;text-align:center}
+</style></head><body>
+<div class="top"><div><h1>thrifti credit: the look (3 sample screens)</h1><p>Early draft, shared for feedback. Please do not pass this link on. All names and numbers are sample data.</p></div><button class="toggle" onclick="var r=document.documentElement;r.dataset.theme=r.dataset.theme==='dark'?'light':'dark'">Switch light or dark</button></div>
+<div class="row">
+
+<!-- 1 HOME -->
+<div><div class="phone">
+<div class="status"><span>9:41</span><span>● ● ●</span></div>
+<div class="hdr"><div class="logo"><div class="badge">t</div>thrifti</div><div class="m" style="font-weight:600">Maya</div></div>
+<div class="body">
+<div class="m">Good evening, Maya</div>
+<div class="card hero"><div style="display:flex;justify-content:space-between;align-items:flex-start"><div><div class="s">Your CARE rating</div><div class="big">760</div></div><span class="pill p-b">Good</span></div>
+<div class="gauge"><div class="gtrack"><span style="flex:642"></span><span style="flex:67"></span><span style="flex:67"></span><span style="flex:224"></span></div><div class="gmark" style="left:76%"></div></div>
+<div class="glabels"><span>0</span><span>642</span><span>709</span><span>776</span><span>999</span></div>
+<div class="s" style="margin-top:6px">Up 18 points since last month. Rent on time 14 months in a row.</div></div>
+<div class="card"><div style="display:flex;justify-content:space-between;align-items:baseline"><h3 style="margin:0">Care for your tree</h3><span class="pill p-ok">Sapling</span></div>
+<svg width="100%" viewBox="0 0 320 304" aria-label="trust tree"><path d="M160 236 L160 80" stroke="#8a6a4a" stroke-width="11" stroke-linecap="round"/><path d="M160 190 L267 128" stroke="#8a6a4a" stroke-width="5" stroke-linecap="round"/><g transform="translate(198 176)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><g transform="translate(205 156)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><g transform="translate(227 159)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><g transform="translate(235 139)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><g transform="translate(256 142)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><circle cx="267" cy="128" r="7.5" fill="#F5A524"/><path d="M267 121 q2 -4 5 -4" stroke="#1f9d6b" stroke-width="2" fill="none"/><path d="M160 190 L53 128" stroke="#8a6a4a" stroke-width="5" stroke-linecap="round"/><g transform="translate(129 164)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><g transform="translate(104 166)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><g transform="translate(93 143)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><g transform="translate(67 145)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><path d="M160 150 L215 71" stroke="#8a6a4a" stroke-width="5" stroke-linecap="round"/><g transform="translate(183 129)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><g transform="translate(184 103)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><g transform="translate(208 93)"><circle cx="4.2" cy="0.0" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="4.0" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="2.5" r="3.4" fill="#f28fb0"/><circle cx="-3.4" cy="-2.5" r="3.4" fill="#f28fb0"/><circle cx="1.3" cy="-4.0" r="3.4" fill="#f28fb0"/><circle r="2.2" fill="#F5A524"/></g><circle cx="215" cy="71" r="7.5" fill="#F5A524"/><path d="M215 64 q2 -4 5 -4" stroke="#1f9d6b" stroke-width="2" fill="none"/><path d="M160 150 L105 71" stroke="#cfc6bb" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/><circle cx="105" cy="71" r="9" fill="none" stroke="#a0a4bb" stroke-width="1.5" stroke-dasharray="3 3"/><text x="105" y="75" text-anchor="middle" font-size="12" fill="#4C5FD5">+</text><path d="M160 112 L233 92" stroke="#8a6a4a" stroke-width="5" stroke-linecap="round"/><ellipse cx="185" cy="112" rx="7" ry="3.6" fill="#1f9d6b" transform="rotate(-50 185 112)"/><ellipse cx="189" cy="97" rx="7" ry="3.6" fill="#2bb37d" transform="rotate(20 189 97)"/><ellipse cx="200" cy="109" rx="7" ry="3.6" fill="#2bb37d" transform="rotate(-50 200 109)"/><ellipse cx="203" cy="93" rx="7" ry="3.6" fill="#1f9d6b" transform="rotate(20 203 93)"/><ellipse cx="214" cy="105" rx="7" ry="3.6" fill="#2bb37d" transform="rotate(-50 214 105)"/><ellipse cx="217" cy="89" rx="7" ry="3.6" fill="#2bb37d" transform="rotate(20 217 89)"/><ellipse cx="228" cy="101" rx="7" ry="3.6" fill="#1f9d6b" transform="rotate(-50 228 101)"/><path d="M160 112 L87 92" stroke="#8a6a4a" stroke-width="5" stroke-linecap="round"/><ellipse cx="138" cy="99" rx="7" ry="3.6" fill="#1f9d6b" transform="rotate(-200 138 99)"/><ellipse cx="126" cy="110" rx="7" ry="3.6" fill="#2bb37d" transform="rotate(-130 126 110)"/><ellipse cx="122" cy="94" rx="7" ry="3.6" fill="#2bb37d" transform="rotate(-200 122 94)"/><ellipse cx="110" cy="106" rx="7" ry="3.6" fill="#1f9d6b" transform="rotate(-130 110 106)"/><ellipse cx="105" cy="90" rx="7" ry="3.6" fill="#2bb37d" transform="rotate(-200 105 90)"/><ellipse cx="93" cy="101" rx="7" ry="3.6" fill="#2bb37d" transform="rotate(-130 93 101)"/><path d="M160 85 L160 13" stroke="#cfc6bb" stroke-width="3" stroke-linecap="round" stroke-dasharray="5 5"/><circle cx="160" cy="13" r="9" fill="none" stroke="#a0a4bb" stroke-width="1.5" stroke-dasharray="3 3"/><text x="160" y="17" text-anchor="middle" font-size="12" fill="#4C5FD5">+</text><line x1="40" y1="236" x2="280" y2="236" stroke="#c9b9a6" stroke-width="1.5"/><g stroke="#a88a6a" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M160 236 C150 252 120 262 92 270"/><path d="M160 236 C170 252 200 262 228 270"/></g><path d="M160 236 C160 256 162 266 160 282" stroke="#cfc6bb" stroke-width="3" stroke-dasharray="5 5" fill="none"/><g font-size="9.5" fill="#8a6a4a" text-anchor="middle"><text x="78" y="286">Chequing</text><text x="242" y="286">Savings acct</text><text x="160" y="298" fill="#a0a4bb">+ Income</text></g><g font-family="Inter,sans-serif" font-size="10" font-weight="600"><text x="285" y="122" text-anchor="middle" fill="#6b6f86">Rent</text><text x="35" y="122" text-anchor="middle" fill="#6b6f86">Utilities</text><text x="227" y="59" text-anchor="middle" fill="#6b6f86">Phone</text><text x="93" y="59" text-anchor="middle" fill="#a0a4bb">Insurance</text><text x="253" y="91" text-anchor="middle" fill="#6b6f86">Streaming</text><text x="67" y="91" text-anchor="middle" fill="#6b6f86">Dining out</text><text x="160" y="-3" text-anchor="middle" fill="#a0a4bb">Shopping</text></g></svg>
+<div class="legend"><span><i style="background:#f28fb0"></i>Essentials</span><span><i style="background:#2bb37d"></i>Everyday</span><span><i style="background:#F5A524"></i>Rewards</span><span><i style="background:#a88a6a;border-radius:2px"></i>Roots</span></div>
+<details class="more"><summary>How your tree grows</summary><div class="m"><b>Roots</b> are the accounts you link. <b>Flowers</b> bloom on essentials paid on time: rent, utilities, phone. <b>Leaves</b> grow on everyday spending kept within your means. <b>Fruit</b> ripens after 12 on-time months and lowers your loan rate. A hard month is <b>winter</b>: growth pauses, nothing is cut down.</div></details></div>
+</div>
+<div class="nav"><span class="on"><i>⌂</i>Home</span><span><i>◎</i>Rating</span><span><i>＋</i>Add data</span><span><i>$</i>Loan</span><span><i>☺</i>Me</span></div>
+</div><div class="cap">1. Home and trust tree</div></div>
+
+<!-- 2 RATING -->
+<div><div class="phone">
+<div class="status"><span>9:41</span><span>● ● ●</span></div>
+<div class="hdr"><div style="font-weight:700">‹ Your CARE rating</div></div>
+<div class="body">
+<div class="card" style="text-align:center"><div class="big" style="color:var(--brand)">760</div><div class="m">out of 999 · Good</div>
+<div style="display:flex;gap:8px;justify-content:center;margin-top:10px"><span class="pill" style="background:var(--brand-l);color:var(--brand)">Core 612</span><span class="pill p-am">thrifti add-ons +148</span></div></div>
+<div class="card"><h3>Core: 12 standard criteria</h3>
+<table>
+<tr><td>Payment delays<div class="mini"><i style="width:88%"></i></div></td><td class="n">232 / 264</td></tr>
+<tr><td>Age of oldest bank account<div class="mini"><i style="width:60%"></i></div></td><td class="n">41 / 69</td></tr>
+<tr><td>Time at current address<div class="mini"><i style="width:70%"></i></div></td><td class="n">66 / 94</td></tr>
+<tr><td>Recent applications<div class="mini"><i style="width:80%"></i></div></td><td class="n">94 / 117</td></tr>
+<tr><td class="m" colspan="2">+ 8 more criteria · See all</td></tr></table></div>
+<div class="card"><h3>thrifti add-ons</h3>
+<table class="add">
+<tr><td>Rent on time, 14 months<div class="mini"><i style="width:92%"></i></div></td><td class="n">+55</td></tr>
+<tr><td>Bills on time<div class="mini"><i style="width:80%"></i></div></td><td class="n">+38</td></tr>
+<tr><td>Payment burden for your income<div class="mini"><i style="width:65%"></i></div></td><td class="n">+30</td></tr>
+<tr><td>Savings habit<div class="mini"><i style="width:45%"></i></div></td><td class="n">+25</td></tr></table></div>
+<div class="card" style="background:var(--brand-l);border:0"><h3>Why, in plain words</h3><div class="m" style="color:var(--ink)">Your rent and bills are paid reliably. What holds you back most is card use above 70% of your limits. Paying one card below 30% would add about 20 points.</div></div>
+<a class="btn ghost">Try the what-if simulator</a>
+<div class="note">A person reviews every decision. You can ask for a review at any time.</div>
+</div>
+<div class="nav"><span><i>⌂</i>Home</span><span class="on"><i>◎</i>Rating</span><span><i>＋</i>Add data</span><span><i>$</i>Loan</span><span><i>☺</i>Me</span></div>
+</div><div class="cap">2. CARE rating with the points table</div></div>
+
+<!-- 3 OFFER -->
+<div><div class="phone">
+<div class="status"><span>9:41</span><span>● ● ●</span></div>
+<div class="hdr"><div style="font-weight:700">‹ Your thrifti loan</div></div>
+<div class="body">
+<div class="card hero"><span class="pill p-b">Approved after review</span><div class="s" style="margin-top:10px">thrifti credit loan</div><div class="big">$6,000</div><div class="s" style="margin-top:6px">to pay off 2 cards</div></div>
+<div class="card">
+<div class="kv"><span class="m">Your card rate now</span><b>21.99%</b></div>
+<div class="kv"><span class="m">thrifti loan rate</span><b style="color:var(--brand)">10.50%</b></div>
+<div class="kv"><span class="m">Term</span><b>3 years</b></div>
+<div class="kv" style="border:0"><span class="m">Monthly payment</span><b>$195</b></div></div>
+<div class="save">You save about $1,230 in interest over 3 years</div>
+<div class="card"><h3>Rate step-downs</h3><div class="m">Pay on time for 12 months and your rate drops by 0.50%. A recorded hardship pauses the count, it never resets it.</div><div style="margin-top:10px" class="bar"><i style="width:0%"></i></div><div class="m" style="margin-top:6px">0 of 12 on-time payments</div></div>
+<div class="card"><div class="step"><div class="dot">✓</div>We applied for you</div><div class="step"><div class="dot">✓</div>A person reviewed your file</div><div class="step"><div class="dot wait">3</div>Funds go straight to your cards</div></div>
+<a class="btn">Accept and pay off my cards</a>
+<div class="note">Funded by <b>[partner credit union]</b></div>
+</div>
+<div class="nav"><span><i>⌂</i>Home</span><span><i>◎</i>Rating</span><span><i>＋</i>Add data</span><span class="on"><i>$</i>Loan</span><span><i>☺</i>Me</span></div>
+</div><div class="cap">3. Loan offer, applied for you</div></div>
+
+</div>
+<p class="foot"><b>What do you think?</b> Send your feedback to contact@thrifti.app.<br>Sample data only. Points, rates and savings are placeholders until the partner pricing and the refit model exist. The core criteria follow the published SCHUFA points table; the add-ons are thrifti's.</p>
+</body></html>
