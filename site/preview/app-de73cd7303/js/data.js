@@ -19,6 +19,7 @@ const DB = {
     { id: 'bills', icon: '💡', name: 'Utility and phone bills', sub: 'Last 12 months', pts: 50, done: false },
     { id: 'savings', icon: '🐷', name: 'Savings account', sub: 'Shows your saving habit', pts: 25, done: false }
   ],
+  extras: [],
   habits: [['Rent on time', '14 of 14 months'], ['Bills on time', '23 of 24'], ['Saved on payday', '9 of 12'], ['Card paid above minimum', '11 of 12']],
   hardship: false,
   reminders: [['Nov 28', 'Rent $1,450'], ['Dec 2', 'Hydro bill $86'], ['Dec 5', 'Card 1 minimum $126']],
@@ -28,7 +29,22 @@ const DB = {
 
 const api = {
   get: () => DB,
-  points: () => DB.optional.filter(o => o.done).reduce((a, o) => a + o.pts, 0),
+  // Grocery receipts are left out on purpose: item lines can reveal health or
+  // religion, which the EU standard bans from ratings (see docs research note).
+  extraTypes: [
+    { icon: '💳', name: 'Another credit card statement', sub: 'Balance, limit, payments', pts: 50 },
+    { icon: '🏦', name: 'Another bank statement', sub: 'Chequing or savings, PDF', pts: 50 },
+    { icon: '💡', name: 'Hydro or electricity bill', sub: 'Last 12 months', pts: 25 },
+    { icon: '🔥', name: 'Gas or heating bill', sub: 'Last 12 months', pts: 25 },
+    { icon: '💧', name: 'Water bill', sub: 'Last 12 months', pts: 25 },
+    { icon: '📱', name: 'Phone or internet bill', sub: 'Last 12 months', pts: 25 },
+    { icon: '🛡', name: 'Insurance payments', sub: 'Home, tenant or car', pts: 25 },
+    { icon: '🚗', name: 'Car loan statement', sub: 'Payments made', pts: 50 },
+    { icon: '🎓', name: 'Student loan statement', sub: 'Payments made', pts: 50 },
+    { icon: '📈', name: 'TFSA or RRSP statement', sub: 'Shows saving over time', pts: 50 },
+    { icon: '🧾', name: 'Pay stub', sub: 'Recent, from your employer', pts: 25 }
+  ],
+  points: () => DB.optional.filter(o => o.done).reduce((a, o) => a + o.pts, 0) + DB.extras.reduce((a, o) => a + o.pts, 0),
   totals() {
     const b = DB.cards.reduce((a, c) => a + c.balance, 0), l = DB.cards.reduce((a, c) => a + c.limit, 0);
     return { balance: b, limit: l, use: l ? Math.round(b / l * 100) : 0 };

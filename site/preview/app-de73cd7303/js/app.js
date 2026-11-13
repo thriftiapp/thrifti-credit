@@ -72,6 +72,10 @@ const screens = {
     <div class="soon">${pill('Coming soon', 'p-am')}<span>Ways to use your points. Keep collecting.</span></div>
     <div class="m" style="margin-bottom:4px">Each one takes a few minutes and can only help your rating.</div>
     ${d.optional.map(o => row(o.icon, o.name, o.sub, o.done ? done : `<button class="pill addbtn" data-add="${o.id}" type="button">+${o.pts} pts</button>`)).join('')}
+    ${d.extras.map(x => row(x.icon, x.name, x.sub, done)).join('')}
+    <div class="addmore"><label class="fl" for="more"><span>Add another document</span><select class="in" id="more"><option value="">Choose a type</option>${api.extraTypes.map((t, i) => `<option value="${i}">${t.name} (+${t.pts} pts)</option>`).join('')}</select></label>
+    <button class="btn ghost" id="addmore" type="button">+ Add this document</button>
+    <div class="m">Add as many as you have: every card, every bank account, every bill. More records give a fuller and fairer rating.</div></div>
     <div class="soon" style="background:var(--brand-l)"><span><b>Coming with open banking:</b> once Canada's open banking rules start, you will be able to connect your bank directly instead of uploading statements, only if you choose to.</span></div></div>
     ${btn('Continue', 'habits')}<div class="note">Points show the effort you put in. They are not money and cannot be bought or sold.</div></div>${nav('evidence')}`; },
 
@@ -85,12 +89,13 @@ const screens = {
     <div class="card" style="text-align:center"><div class="big" style="color:var(--brand)">${r.score}</div><div class="m">out of 999 · ${api.band(r.score)}</div></div>
     ${card('<h3>5 parts of your rating</h3>' + partsHtml(r.parts))}
     ${card('<h3>Helped you most</h3>' + ink('Rent and bills paid on time for 14 months.') + '<h3 style="margin-top:12px">Held you back most</h3>' + ink(`Using ${api.totals().use}% of your total card limits. Below 30% would help most.`), blue)}
+    ${card('<h3>Using less credit raises your rating</h3>' + ink('Paying cards down and using less of your limit moves your CARE rating up, never down. Saving money helps your rating too. You never need to borrow or spend more to grow it.'), 'background:var(--ok-l);border:0')}
     ${btn('Try the what-if simulator', 'whatif', 1)}${btn('See what it could save', 'save')}
     <div class="note">Each part counts your accounts together: 10 cards are one total, not 10 scores. A person reviews every decision.</div></div>${nav('rating')}`; },
 
   whatif: () => { const t = api.totals(); if (state.use === null) state.use = t.use;
     return `${hdr('What if...', 'rating')}<div class="body">
-    <div class="card"><label class="sl" for="s-use"><div class="row2"><span>Card use</span><b id="v-use">${state.use}%</b></div><input type="range" id="s-use" min="0" max="100" value="${state.use}"><div class="m" style="font-size:13.5px">Now ${t.use}%</div></label>
+    <div class="card"><label class="sl" for="s-use"><div class="row2"><span>Card use (lower is better)</span><b id="v-use">${state.use}%</b></div><input type="range" id="s-use" min="0" max="100" value="${state.use}"><div class="m" style="font-size:13.5px">Now ${t.use}%</div></label>
     <label class="sl" for="s-rent"><div class="row2"><span>Months of rent on time</span><b id="v-rent">${state.rent}</b></div><input type="range" id="s-rent" min="0" max="36" value="${state.rent}"><div class="m" style="font-size:13.5px">Now 14</div></label>
     ${chk('s-cra', 'Add my CRA income document', state.craSim)}</div>
     <div class="card hero" style="display:flex;justify-content:space-around;text-align:center"><div><div class="s">Now</div><div class="big" style="font-size:32px">${api.rating().score}</div></div><div style="font-size:24px;align-self:center">→</div><div><div class="s">Could be</div><div class="big" style="font-size:32px" id="v-new"></div></div></div>
@@ -116,7 +121,7 @@ const screens = {
 
   home: () => { const r = api.rating();
     return `<div class="hdr"><div class="logo"><div class="badge">t</div>thrifti${TM}</div><a class="m" href="#me" style="font-weight:600">${api.get().user.first}</a></div><div class="body">
-    <div class="m">Good evening, ${api.get().user.first}</div>
+    <a class="club" href="#tree"><div class="cbadge">t</div><div style="flex:1;min-width:0"><div class="clabel">thrifti club member</div><b>${api.get().user.first} · Sapling</b><div class="csub">Member since Nov 2026 · next stage: Young tree</div></div><span aria-hidden="true">›</span></a>
     <a class="card hero" href="#rating" style="display:block"><div class="row2"><div><div class="s">Your CARE${TM} rating</div><div class="big">${r.score}</div></div>${pill(api.band(r.score), 'p-b')}</div>${gauge(r.score)}<div class="s" style="margin-top:6px">Rent on time 14 months in a row.</div></a>
     <a class="card" href="#tree" style="display:block"><div class="row2"><h3 style="margin:0">Care${TM} for your tree</h3>${pill('Sapling', 'p-ok')}</div>${tree(1)}
     <div class="legend"><span><i style="background:#f28fb0"></i>Essentials</span><span><i style="background:#2bb37d"></i>Everyday</span><span><i style="background:#F5A524"></i>Rewards</span><span><i style="background:#a88a6a;border-radius:2px"></i>Roots</span></div></a>
@@ -161,7 +166,10 @@ function wire(name) {
   }
   if (name === 'consent') document.querySelectorAll('#app input[type=checkbox]').forEach(i => i.onchange = () => {
     const m = { 'c-bank': 'bank', 'c-rent': 'rent', 'c-bills': 'bills', 'c-cra': 'cra', 'c-apply': 'applyForMe' }; d.consent[m[i.id]] = i.checked; });
-  if (name === 'evidence') document.querySelectorAll('[data-add]').forEach(b => b.onclick = () => { d.optional.find(o => o.id === b.dataset.add).done = true; render(); });
+  if (name === 'evidence') {
+    document.querySelectorAll('[data-add]').forEach(b => b.onclick = () => { d.optional.find(o => o.id === b.dataset.add).done = true; render(); });
+    $('#addmore').onclick = () => { const v = $('#more').value; if (v === '') { $('#more').focus(); return; } d.extras.push({ ...api.extraTypes[+v] }); render(); };
+  }
   if (name === 'habits') $('#hardship').onclick = () => { d.hardship = !d.hardship; render(); };
   if (name === 'whatif') {
     const upd = () => {
