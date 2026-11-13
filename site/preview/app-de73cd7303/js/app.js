@@ -34,8 +34,8 @@ function tree(small) {
     if (fr) P.push(`<circle cx="${f(x1)}" cy="${f(y1)}" r="7.5" fill="#F5A524"/>`);
     if (!on) P.push(`<circle cx="${f(x1)}" cy="${f(y1)}" r="9" fill="none" stroke="#a0a4bb" stroke-width="1.5" stroke-dasharray="3 3"/><text x="${f(x1)}" y="${f(y1 + 4)}" text-anchor="middle" font-size="12" fill="#4C5FD5">+</text>`);
   }
-  const roots = '<line x1="40" y1="236" x2="280" y2="236" stroke="#c9b9a6" stroke-width="1.5"/><g stroke="#a88a6a" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M160 236 C150 252 120 262 92 270"/><path d="M160 236 C170 252 200 262 228 270"/></g><path d="M160 236 C160 256 162 266 160 282" stroke="#cfc6bb" stroke-width="3" stroke-dasharray="5 5" fill="none"/><g font-size="9.5" fill="#8a6a4a" text-anchor="middle"><text x="78" y="286">Chequing</text><text x="242" y="286">Savings acct</text><text x="160" y="298" fill="#a0a4bb">+ Income</text></g>';
-  return `<svg width="100%" viewBox="0 0 320 304" role="img" aria-label="Your trust tree"${small ? ' style="max-height:220px"' : ''}><path d="M160 236 L160 80" stroke="#8a6a4a" stroke-width="11" stroke-linecap="round"/>${P.join('')}${roots}<g font-family="Inter,sans-serif" font-size="10" font-weight="600">${T.join('')}</g></svg>`;
+  const roots = '<line x1="40" y1="236" x2="280" y2="236" stroke="#c9b9a6" stroke-width="1.5"/><g stroke="#a88a6a" stroke-width="3.5" stroke-linecap="round" fill="none"><path d="M160 236 C150 252 120 262 92 270"/><path d="M160 236 C170 252 200 262 228 270"/></g><path d="M160 236 C160 256 162 266 160 282" stroke="#cfc6bb" stroke-width="3" stroke-dasharray="5 5" fill="none"/><g font-size="12" fill="#8a6a4a" text-anchor="middle"><text x="78" y="286">Chequing</text><text x="242" y="286">Savings acct</text><text x="160" y="298" fill="#a0a4bb">+ Income</text></g>';
+  return `<svg width="100%" viewBox="0 0 320 304" role="img" aria-label="Your trust tree"${small ? ' style="max-height:220px"' : ''}><path d="M160 236 L160 80" stroke="#8a6a4a" stroke-width="11" stroke-linecap="round"/>${P.join('')}${roots}<g font-family="Inter,sans-serif" font-size="12.5" font-weight="600">${T.join('')}</g></svg>`;
 }
 
 function gauge(score) {
@@ -90,8 +90,8 @@ const screens = {
 
   whatif: () => { const t = api.totals(); if (state.use === null) state.use = t.use;
     return `${hdr('What if...', 'rating')}<div class="body">
-    <div class="card"><label class="sl" for="s-use"><div class="row2"><span>Card use</span><b id="v-use">${state.use}%</b></div><input type="range" id="s-use" min="0" max="100" value="${state.use}"><div class="m" style="font-size:11px">Now ${t.use}%</div></label>
-    <label class="sl" for="s-rent"><div class="row2"><span>Months of rent on time</span><b id="v-rent">${state.rent}</b></div><input type="range" id="s-rent" min="0" max="36" value="${state.rent}"><div class="m" style="font-size:11px">Now 14</div></label>
+    <div class="card"><label class="sl" for="s-use"><div class="row2"><span>Card use</span><b id="v-use">${state.use}%</b></div><input type="range" id="s-use" min="0" max="100" value="${state.use}"><div class="m" style="font-size:13.5px">Now ${t.use}%</div></label>
+    <label class="sl" for="s-rent"><div class="row2"><span>Months of rent on time</span><b id="v-rent">${state.rent}</b></div><input type="range" id="s-rent" min="0" max="36" value="${state.rent}"><div class="m" style="font-size:13.5px">Now 14</div></label>
     ${chk('s-cra', 'Add my CRA income document', state.craSim)}</div>
     <div class="card hero" style="display:flex;justify-content:space-around;text-align:center"><div><div class="s">Now</div><div class="big" style="font-size:32px">${api.rating().score}</div></div><div style="font-size:24px;align-self:center">→</div><div><div class="s">Could be</div><div class="big" style="font-size:32px" id="v-new"></div></div></div>
     <div class="m">An estimate only. Real changes show at your next monthly update.</div>${sp}${btn('Back to my rating', 'rating', 1)}</div>${nav('rating')}`; },
@@ -121,7 +121,7 @@ const screens = {
     <a class="card" href="#tree" style="display:block"><div class="row2"><h3 style="margin:0">Care${TM} for your tree</h3>${pill('Sapling', 'p-ok')}</div>${tree(1)}
     <div class="legend"><span><i style="background:#f28fb0"></i>Essentials</span><span><i style="background:#2bb37d"></i>Everyday</span><span><i style="background:#F5A524"></i>Rewards</span><span><i style="background:#a88a6a;border-radius:2px"></i>Roots</span></div></a>
     <a class="card" href="#save" style="display:block"><div class="row2"><h3 style="margin:0">Your cards this month</h3><b style="color:#c0392b">${money(api.monthlyCardInterest())} interest</b></div>
-    <div class="row2" style="margin-top:10px;font-size:13px"><span>Card use</span><b>${api.totals().use}% · goal under 30%</b></div><div class="goal"><i style="width:${Math.min(100, api.totals().use)}%"></i><span style="left:30%"></span></div>
+    <div class="row2" style="margin-top:10px;font-size:15px"><span>Card use</span><b>${api.totals().use}% · goal under 30%</b></div><div class="goal"><i style="width:${Math.min(100, api.totals().use)}%"></i><span style="left:30%"></span></div>
     <div class="m" style="margin-top:6px">Paying cards down grows fruit on your tree.</div></a>
     <div class="card"><h3>Coming up</h3>${api.get().reminders.map(([d, t]) => `<div class="kv"><span class="m">${d}</span><b>${t}</b></div>`).join('').replace(/<div class="kv">(?![\s\S]*<div class="kv">)/, '<div class="kv" style="border:0">')}</div></div>${nav('home')}`; },
 
@@ -145,7 +145,7 @@ const screens = {
 
 function partsHtml(parts) {
   return PARTS.map(([k, n, s]) => { const l = api.level(parts[k]);
-    return `<div class="part"><div class="row2"><b>${n}</b><span style="color:${LCOL[l]};font-weight:700">${l}</span></div><div class="m" style="font-size:11.5px">${s}</div><div class="bar" style="margin-top:6px;height:8px"><i style="width:${Math.round(parts[k] * 100)}%;background:${LCOL[l]}"></i></div></div>`; }).join('');
+    return `<div class="part"><div class="row2"><b>${n}</b><span style="color:${LCOL[l]};font-weight:700">${l}</span></div><div class="m" style="font-size:13.5px">${s}</div><div class="bar" style="margin-top:6px;height:8px"><i style="width:${Math.round(parts[k] * 100)}%;background:${LCOL[l]}"></i></div></div>`; }).join('');
 }
 
 function wire(name) {
