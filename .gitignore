@@ -5,3 +5,6 @@ _chats/
 _preview/
 *.lnk
 _reference/
+
+# Saved third-party sources: copyrighted or shared privately (CCS report); never publish
+research/sources/
