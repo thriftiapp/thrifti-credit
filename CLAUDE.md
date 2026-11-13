@@ -25,7 +25,7 @@ account. Read the prompts' folder and repository steps with that in mind.
 
 ## About thrifti credit
 - Always "thrifti", all lowercase, everywhere.
-- Research-stage idea in Canada. Not incorporated. Not a lender.
+- Research-stage idea in Canada. Not a lender. thrifti is incorporated, but do not say so publicly for now: never write "inc.", "incorporated" or "not incorporated" in public material (AD, 2026-11-09).
 - Fair-rate debt consolidation (target 8 to 10 percent APR), later a debt relief bank,
   using a transparent CARE Score (income stability, expense predictability, cash flow
   resilience, payment behaviour on rent and bills, engagement). A licensed partner
@@ -33,7 +33,7 @@ account. Read the prompts' folder and repository steps with that in mind.
 - Market figures are approximate and must be verified before use (handover Part 3).
 - Open banking: Consumer-Driven Banking Act passed March 2026; final rules targeted late
   2026 or early 2027. Use an aggregator such as Flinks until the regulated channel is live.
-- First target: stable income, on-time bills, score hurt by a shock, Ontario or Quebec.
+- First target: stable income, on-time bills, score hurt by a shock, anywhere in Canada except Quebec (AD, 2026-11-09).
 
 ## Plan
 1. Weeks 1 to 6: 20 to 30 NGO-sourced interviews, waitlist site, one-page synthesis.
@@ -81,3 +81,27 @@ or a score increase.
 After the website, ask AD before starting anything else. Likely next: demo at
 `/demo` (`docs/08_claude_code_prototype_prompt.txt`), interview guide, NGO outreach
 tracker.
+
+## Where things live (set 2026-11-08)
+- `D:\Claude\thrifti-credit\` business, website, NGO outreach, docs. This folder.
+- `D:\Claude\Thrifti\` CARE Score research and model build (data, models, outputs such as
+  `outputs\thrifti_parameter_inventory.xlsx`). Kept in place so its sessions, memory and
+  scripts keep working. Shortcut here: `scoring-research (opens D-Claude-Thrifti).lnk`.
+- `_reference\` former `Thrifti\thrifti 2.0` (referral directories, a paper, chat import).
+  Not committed.
+- `D:\Claude\grocery-price-compare\` thrifti grocery, separate project, untouched.
+- The D drive cannot hold folder links (junctions), so do not try to merge with links.
+
+## No confabulation (set 2026-11-08)
+Never state a remembered or summarized fact as verified. Check the file, the source, or the
+saved conversation in `D:\Claude\thrifti-credit\_chats\conversations\` first; otherwise label
+it "unverified". Conversation copies are never deleted or overwritten.
+
+## Decks and pitches (set 2026-11-09)
+Every deck starts, right after the title slide, with "What is in it for you": the audience's benefit. thrifti's ask comes later.
+
+## Channels (set 2026-11-09)
+No LinkedIn posts, now or planned. Do not suggest LinkedIn as a channel.
+
+## Verification (set 2026-11-12 by AD, applies everywhere)
+Never deliver unverified information. Verify every fact against its primary source (the company's own site, the official document, the regulator) before stating it. News, comparison and AI-summary sites are leads only. If a fact cannot be verified, leave it out rather than labelling it "unverified".

@@ -17,7 +17,7 @@ Prepared November 2026 for AD. Save this file in D:\\Claude\\thrifti\\docs and u
 ## 2. The idea in short
 
 - The name is always written thrifti, all lowercase.
-- thrifti is a research-stage idea in Canada. Nothing is incorporated or launched. It is not a lender.
+- thrifti is a research-stage idea in Canada. Nothing is launched. It is not a lender. (Incorporated, but not said publicly for now.)
 - Problem: many Canadians with lower credit scores pay 20 percent or more on credit cards, even when they pay rent and bills on time. Low scores often come from one-off shocks such as job loss or medical bills, not from unwillingness to pay.
 - Product idea: fair-rate debt consolidation (target 8 to 10 percent APR), and later a debt relief bank.
 - Core innovation: a transparent CARE Score based on income stability, expense predictability, cash flow resilience, payment behaviour on rent and bills, and engagement.
@@ -143,7 +143,7 @@ WORKING RULES
 ABOUT THRIFTI
 
 - Always written thrifti, all lowercase, everywhere. Never Thrifti.
-- Research-stage idea in Canada. Not incorporated. Not a lender.
+- Research-stage idea in Canada. Not a lender. thrifti is incorporated, but do not say so publicly for now: never write "inc.", "incorporated" or "not incorporated" in public material (AD, 2026-11-09).
 - Fair-rate debt consolidation (target 8 to 10 percent APR) for Canadians with lower credit scores, using a transparent CARE Score. A licensed partner lends; thrifti scores and refers.
 - Open banking rules are not final yet. Use an aggregator such as Flinks later.
 - Domain thrifti.app, DNS at my registrar. Email contact@thrifti.app on Zoho. Never touch MX, SPF, DKIM or Zoho verification records.

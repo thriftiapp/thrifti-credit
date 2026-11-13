@@ -11,6 +11,6 @@ Options: No, these are essentials | Yes, it is fair | I did not know this happen
 ## E2 post (outcome 1, with link)
 You need a phone to work and hydro to live. Yet the credit check to open them can count against your credit score, and years of paying those bills on time often count for nothing.
 
-thrifti credit is a research project asking whether essentials should be treated as needs, not borrowing. In our CARE rating, a check for phone, internet, utilities or rent never counts against you, and paying them on time helps.
+thrifti credit is a research project asking whether essentials should be treated as needs, not borrowing. In our CARE rating, only your payments move your rating. A credit check never counts against you, and paying on time helps.
 
 If this has happened to you, your story would help: https://credit.thrifti.app/v2/?source=SRC
