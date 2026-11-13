@@ -20,6 +20,7 @@
 <meta name="twitter:image" content="https://credit.thrifti.app/img/og-image.png">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="v2.css">
+<style>.facts{background:var(--tint);padding:56px 0}.facts .fx-stage{position:relative;min-height:330px}.fx{position:absolute;inset:0;margin:0;opacity:0;transform:translateY(12px);transition:opacity .6s,transform .6s;pointer-events:none}.fx.on{opacity:1;transform:none;pointer-events:auto}.fx-big{font-size:clamp(48px,9vw,84px);font-weight:800;letter-spacing:-.03em;color:var(--primary);margin:0;line-height:1}.fx-txt{font-size:clamp(18px,2.4vw,22px);max-width:40ch;margin:10px 0 8px}.fx-us{font-size:clamp(16px,2vw,18px);max-width:46ch;margin:0 0 10px;padding:10px 14px;border-left:4px solid var(--amber);background:var(--card);border-radius:8px}.fx figcaption{font-size:14px;color:var(--mfg)}.fx-dots{display:flex;gap:10px;margin-top:18px}.fx-dots button{width:12px;height:12px;border-radius:50%;border:0;background:var(--border);cursor:pointer;padding:0}.fx-dots button[aria-selected=true]{background:var(--primary)}@media (max-width:600px){.facts .fx-stage{min-height:460px}}@media (prefers-reduced-motion:reduce){.fx{transition:none}}</style>
 </head>
 <body>
 <header id="nav" class="nav">
@@ -66,6 +67,33 @@
       </div>
       <p class="foot">*Illustrative estimate: $131 billion in Canadian credit card balances (Equifax Canada, Q4 2025) × 46%, the share of cardholders who carry a balance from month to month (Bank of Canada staff analytical note 2024-18; used here as an assumed share of balances charged interest) × 21.99%, a common card rate (TD Cash Back Visa, September 2026) ÷ 31,556,952 seconds in a year. Statement math: fixed minimum, interest compounded monthly, no fees.</p>
     </div>
+  </div>
+</section>
+
+<section id="facts" class="facts" aria-label="What the research shows">
+  <div class="wrap">
+    <p class="eyebrow">What the research shows, and what we are building</p>
+    <div class="fx-stage" aria-live="polite">
+      <figure class="fx on">
+        <p class="fx-big">54%</p>
+        <p class="fx-txt">of people in German debt counselling got there through job loss, illness, a separation or a failed business. Poor budgeting: 11.7%.</p>
+        <p class="fx-us"><b>What we are building:</b> a rating that asks why a payment was missed, so a job loss or an illness is not treated like a choice not to pay.</p>
+        <figcaption>Destatis, over-indebtedness statistics 2025 (about 187,000 people)</figcaption>
+      </figure>
+      <figure class="fx">
+        <p class="fx-big">3&times;</p>
+        <p class="fx-txt">People on low incomes in the EU were more than three times as likely to be behind on utility bills (16.8% compared with 5.1%), but far less so on loans (4.6% compared with 2.4%).</p>
+        <p class="fx-us"><b>What we are building:</b> a rating that counts the rent and bills you do pay on time, and sets a higher bar before a late bill counts against you.</p>
+        <figcaption>Eurostat, EU-SILC 2025</figcaption>
+      </figure>
+      <figure class="fx">
+        <p class="fx-big">90 days</p>
+        <p class="fx-txt">New EU credit rules give more than 90 days behind as an example of financial difficulty, and require lenders to offer forbearance first. </p>
+        <p class="fx-us"><b>What we are building:</b> a longer window, 4 months, with the reason weighed, and help to catch up, so people can recover instead of being pushed further down.</p>
+        <figcaption>Directive (EU) 2023/2225, recital 81 and Article 35</figcaption>
+      </figure>
+    </div>
+    <div class="fx-dots" role="tablist" aria-label="Choose a fact"></div>
   </div>
 </section>
 
@@ -206,5 +234,6 @@
 </footer>
 <script src="v2.js"></script>
 <a class="talk-float" href="mailto:contact@thrifti.app?subject=Talk%20to%20a%20person">&#128172; Talk to a person</a>
+<script>(function(){var f=[].slice.call(document.querySelectorAll(".fx")),d=document.querySelector(".fx-dots"),i=0,t;function show(n){f[i].classList.remove("on");b[i].setAttribute("aria-selected","false");i=n;f[i].classList.add("on");b[i].setAttribute("aria-selected","true")}var b=f.map(function(_,n){var x=document.createElement("button");x.setAttribute("role","tab");x.setAttribute("aria-label","Fact "+(n+1));x.setAttribute("aria-selected",n?"false":"true");x.onclick=function(){show(n);go()};d.appendChild(x);return x});function go(){clearInterval(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches)t=setInterval(function(){show((i+1)%f.length)},7000)}var s=document.querySelector(".fx-stage");s.onmouseenter=function(){clearInterval(t)};s.onmouseleave=go;go()})();</script>
 </body>
 </html>
