@@ -90,7 +90,6 @@ const screens = {
     ${card('<h3>5 parts of your rating</h3>' + partsHtml(r.parts))}
     ${card('<h3>Helped you most</h3>' + ink('Rent and bills paid on time for 14 months.') + '<h3 style="margin-top:12px">Held you back most</h3>' + ink(`Using ${api.totals().use}% of your total card limits. Below 30% would help most.`), blue)}
     ${card('<h3>Using less credit raises your rating</h3>' + ink('Paying cards down and using less of your limit moves your CARE rating up, never down. Saving money helps your rating too. You never need to borrow or spend more to grow it.'), 'background:var(--ok-l);border:0')}
-    ${card('<h3>Credit checks never lower your rating</h3>' + ink('Only your payments move your CARE rating. A credit check for a phone, hydro, rent or a loan never counts against you. Paying on time helps it. Leaving a bill unpaid for 3 months or more can lower it, but a payment 1 or 2 months late does not, and we look at the reason, such as a job loss or illness.'), 'background:var(--ok-l);border:0')}
     ${btn('Try the what-if simulator', 'whatif', 1)}${btn('See what it could save', 'save')}
     <div class="note">Each part counts your accounts together: 10 cards are one total, not 10 scores. A person reviews every decision.</div></div>${nav('rating')}`; },
 

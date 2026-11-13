@@ -1,16 +1,23 @@
-# DRAFT posts: essentials should not cost you credit (NOT approved, do not post)
+# DRAFT survey questions: essentials, credit checks and defaults (NOT approved, do not post)
 
-Drafted 2026-11-13 for AD. Nothing here goes to approved-content.md until AD approves the exact wording.
+Drafted 2026-11-13 for AD. These are questions to learn what people think, not statements of a thrifti rule.
+Nothing goes out until AD approves the exact wording.
 
-## E1 poll (outcome 1)
-Text: Quick poll: should a credit check to get a phone, hydro or internet be allowed to lower your credit score?
+## S1 (single choice)
+When you apply for a phone, hydro or internet, the company may check your credit. Should that check be allowed to affect your credit score?
+Options: Yes | No | Only for some services | Not sure
 
-We are thrifti credit, a research project on fairer credit scoring for people who pay their bills but are squeezed by rising costs. Answers are anonymous and help the research.
-Options: No, these are essentials | Yes, it is fair | I did not know this happened
+## S2 (single choice)
+Should paying your phone, utility and rent bills on time help your credit score?
+Options: Yes | No | Not sure
 
-## E2 post (outcome 1, with link)
-You need a phone to work and hydro to live. Yet the credit check to open them can count against your credit score, and years of paying those bills on time often count for nothing.
+## S3 (single choice)
+If someone stops paying a phone or utility bill, after how long should it affect their credit score?
+Options: 1 month late | 2 months late | 3 months or more | Never | Not sure
 
-thrifti credit is a research project asking whether essentials should be treated as needs, not borrowing. In our CARE rating, only your payments move your rating. A credit check never counts against you, and paying on time helps.
+## S4 (single choice)
+If a bill went unpaid because of a job loss, illness or another hard event, should that count the same as missing it for no reason?
+Options: Count it the same | Count it less | Do not count it | Not sure
 
-If this has happened to you, your story would help: https://credit.thrifti.app/v2/?source=SRC
+## S5 (optional, open text)
+Has a credit check or a late bill ever affected your credit score? Tell us what happened.
