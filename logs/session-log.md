@@ -68,3 +68,12 @@ Next
 - Agreed domain plan (AD): thrifti.app = brand home page with two cards; grocery.thrifti.app = grocery app (Vercel); credit.thrifti.app = credit site. Order: credit domain first, then add grocery.thrifti.app alongside, then home page (AD approves), then switch thrifti.app with redirects. Grocery work runs in its own session in the grocery project; check hardcoded URLs and Vercel Hobby non-commercial terms first.
 - LIVE on credit.thrifti.app (2026-11-08), Cloudflare custom domain via wrangler.jsonc routes. Grocery www.thrifti.app still 200. Profile PNGs in brand/ (thrifti-profile.png 1080px for social).
 - LIVE 2026-11-08: tagline shown large in the hero (A-D). Form asks (optional) "Did you notice the short line..." and "Which of these was the line you saw?" (4 taglines + I do not remember). Hidden fields: source, tagline (letter), tagline_text. Measure per tagline: noticed, correctly recognised, sign-up rate. Visitor counter per tagline not built yet.
+
+## 2026-11-12 (evening)
+- Look approved direction: Care for your tree (roots, flowers, leaves, fruit, winter), no coins, TM on thrifti and CARE.
+- Rating shown in 5 parts, weights private. Required vs optional data; optional earns points, "coming soon" hint only.
+- Bank statements by upload for now; open banking line saved in design/README.md, not on the site.
+- Architecture and costs: docs/architecture-and-costs-v1.html (tech floor about $530 a month; people and legal need quotes).
+- Working prototype built: app/ (16 screens, live forms, what-if, loan maths). Not deployed.
+- All work on D; C copies backed up in _chats/c-drive-copy-2026-11-12.
+- Next: investor deck with verified statistics.

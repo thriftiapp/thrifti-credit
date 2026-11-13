@@ -1,0 +1,4 @@
+const fs=require('fs');
+const cats=[['Paying on time','Cards, loans, rent, bills','Strong',90],['How much credit you use','All cards and lines together','Fair',45],['Account history','Age and mix of your accounts','Good',65],['New credit','Recent applications','Good',75],['Everyday cash flow','Income, essentials, savings','Strong',85]];
+const col={Strong:'var(--ok)',Good:'var(--brand)',Fair:'var(--amber)'};
+global.CAT=cats.map(([n,s,l,p])=>`<div style="padding:9px 0;border-bottom:1px solid var(--line)"><div style="display:flex;justify-content:space-between;font-size:14px"><b>${n}</b><span style="color:${col[l]};font-weight:700">${l}</span></div><div class="m" style="font-size:11.5px">${s}</div><div class="bar" style="margin-top:6px;height:8px"><i style="width:${p}%;background:${col[l]}"></i></div></div>`).join('');

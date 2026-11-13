@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>thrifti credit architecture</title>
+<style>
+:root{--ink:#16182b;--mute:#62667e;--line:#dfe1ec;--bg:#f6f7fb;--card:#fff;--brand:#4C5FD5;--brand-l:#eef0fd;--amber-l:#fff4df}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eceefa;--mute:#a1a5bf;--line:#2e3250;--bg:#12142a;--card:#1b1e38;--brand:#8b98f0;--brand-l:#252a55;--amber-l:#3a2f17}}
+:root[data-theme="dark"]{--ink:#eceefa;--mute:#a1a5bf;--line:#2e3250;--bg:#12142a;--card:#1b1e38;--brand:#8b98f0;--brand-l:#252a55;--amber-l:#3a2f17}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,sans-serif;padding:24px 16px}
+.w{max-width:860px;margin:auto}h1{font-size:24px;margin:0}h2{font-size:18px;margin:30px 0 10px;color:var(--brand)}.m{color:var(--mute)}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;background:var(--card);font-size:13.5px}th,td{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}th{background:var(--brand-l)}
+td.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.flow{display:grid;gap:8px}.flow div{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--brand);border-radius:8px;padding:9px 12px;font-size:14px}
+.note{background:var(--amber-l);border-radius:10px;padding:10px 14px;font-size:14px}
+</style></head><body><div class="w">
+<h1>thrifti credit: architecture and cost to go live</h1>
+<p class="m">Draft for AD, 12 November 2026. Vendor prices were checked on each vendor's own pricing page today and are in USD unless the vendor says otherwise. Items without a published price are marked "quote needed" and left blank, not guessed.</p>
+
+<h2>1. Architecture in one picture</h2>
+<div class="flow">
+<div><b>App (what customers use):</b> mobile web app that installs from the browser (no app store). Hosted on Cloudflare, same as credit.thrifti.app today.</div>
+<div><b>API layer:</b> Cloudflare Workers. Checks who is signed in, records consent, passes requests on. Stores no raw data itself.</div>
+<div><b>Database, sign-in and file storage:</b> one managed Postgres service with built-in sign-in and file storage (Supabase is the candidate). Must be hosted in Canada; the Canada region is not confirmed on their pricing page and must be checked before any real data.</div>
+<div><b>Bank linking:</b> Flinks (Canadian), read-only. Bank data goes straight into our database.</div>
+<div><b>Documents:</b> customer uploads credit report, CRA notice, rent and bill proofs. A reader pulls the numbers out; a person checks them.</div>
+<div><b>Scoring service:</b> the CARE points model from the research project, in Python. Runs as a small separate service; every result saved with its reasons and model version.</div>
+<div><b>Reviewer console:</b> staff-only screen. AI prepares, a person decides, the note is required, every action logged.</div>
+<div><b>Partner hand-off:</b> approved files go to the credit union by a secure transfer they choose. Funds go from them to the customer's cards.</div>
+<div><b>Messages:</b> sign-in codes by SMS (Twilio), email from contact@thrifti.app (Zoho, already in place).</div>
+<div><b>Records that must never be lost:</b> consent log, decision log, audit log. Kept apart and never edited, only added to.</div>
+</div>
+
+<h2>2. People needed</h2>
+<div class="tw"><table>
+<tr><th>Role</th><th>When</th><th>Notes</th></tr>
+<tr><td>Full-stack developer</td><td>Build, then part-time</td><td>App, API, database. Claude Code can do much of the build with one developer checking.</td></tr>
+<tr><td>Reviewer (human decision)</td><td>From the first real file</td><td>Required by our own rule: every decision made by a person.</td></tr>
+<tr><td>Privacy and lending lawyer</td><td>Before launch</td><td>Consent wording, provincial lending and consumer reporting rules, partner contract.</td></tr>
+<tr><td>Security review</td><td>Before launch</td><td>Outside test of the app before real bank data goes in.</td></tr>
+<tr><td>Bookkeeper</td><td>Monthly</td><td>Vendor bills and partner settlements.</td></tr>
+</table></div>
+<p class="m">Salaries and fees for these roles are not listed: they depend on who you hire, and no primary source gives them. Get quotes.</p>
+
+<h2>3. Fixed monthly cost (checked prices)</h2>
+<div class="tw"><table>
+<tr><th>Item</th><th>Plan</th><th>Per month</th><th>Source</th></tr>
+<tr><td>Cloudflare Workers</td><td>Paid, 10 million requests included</td><td class="n">$5</td><td>Cloudflare pricing docs</td></tr>
+<tr><td>Supabase</td><td>Pro: 8 GB database, 100 GB files, 100,000 users</td><td class="n">$25</td><td>supabase.com/pricing</td></tr>
+<tr><td>Supabase, if partner asks for SOC 2 report</td><td>Team</td><td class="n">$599</td><td>supabase.com/pricing</td></tr>
+<tr><td>Flinks bank linking</td><td>Starter: 200 new connections a month</td><td class="n">$500</td><td>flinks.com/pricing</td></tr>
+<tr><td>Flinks, larger</td><td>Scale: 1,100 new connections a month</td><td class="n">$1,250</td><td>flinks.com/pricing</td></tr>
+<tr><td>Domain and email</td><td>Already paid</td><td class="n">in place</td><td></td></tr>
+<tr><td><b>Tech floor to go live</b></td><td>Workers + Supabase Pro + Flinks Starter</td><td class="n"><b>$530</b></td><td></td></tr>
+<tr><td><b>If SOC 2 needed</b></td><td>Workers + Supabase Team + Flinks Starter</td><td class="n"><b>$1,104</b></td><td></td></tr>
+</table></div>
+
+<h2>4. Variable cost (grows with customers)</h2>
+<div class="tw"><table>
+<tr><th>Item</th><th>Price</th><th>Source</th></tr>
+<tr><td>SMS sign-in code, Canada</td><td>$0.0083 a message plus a carrier fee of $0.0064 to $0.0087</td><td>Twilio Canada SMS pricing</td></tr>
+<tr><td>Bank links above the plan</td><td>Set in the Flinks contract, not published</td><td>flinks.com/pricing</td></tr>
+<tr><td>Users above 100,000 a month</td><td>$0.00325 each</td><td>supabase.com/pricing</td></tr>
+<tr><td>Extra database space</td><td>$0.125 a GB</td><td>supabase.com/pricing</td></tr>
+<tr><td>Extra file space</td><td>$0.0213 a GB (Supabase) or $0.015 a GB (Cloudflare R2)</td><td>vendor pages</td></tr>
+<tr><td>API requests above 10 million</td><td>$0.30 a million</td><td>Cloudflare pricing docs</td></tr>
+<tr><td>Reviewer time per file</td><td>Quote needed: the largest variable cost</td><td></td></tr>
+</table></div>
+
+<h2>5. One-time cost to start</h2>
+<div class="tw"><table>
+<tr><th>Item</th><th>Cost</th></tr>
+<tr><td>Build (one developer plus Claude Code)</td><td>Quote needed</td></tr>
+<tr><td>Legal review and partner contract</td><td>Quote needed</td></tr>
+<tr><td>Security test before launch</td><td>Quote needed</td></tr>
+<tr><td>Trademark filings, thrifti and CARE (CIPO)</td><td>See CIPO fee page</td></tr>
+<tr><td>Identity check of customers (if the partner requires it)</td><td>Quote needed; partner may do it</td></tr>
+</table></div>
+
+<div class="note" style="margin-top:22px"><b>Bottom line.</b> The technology itself is cheap: about $530 a month at launch (about $1,104 if a SOC 2 report is needed), plus a few cents per customer. The real money is people and professional services: the reviewer, the lawyer and the security test. Those need quotes before a total can be given.</div>
+<p class="m" style="margin-top:14px">Not checked yet: Supabase Canada hosting, Flinks currency, identity-check vendors, CIPO fees. To be confirmed on their own pages before any decision.</p>
+</div></body></html>

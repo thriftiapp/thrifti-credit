@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>thrifti credit wireframes</title>
+<style>
+:root{--ink:#1d1d24;--mute:#6b6b78;--line:#c9c9d3;--fill:#ececf3;--bg:#f6f6f9;--card:#fff;--accent:#4C5FD5}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e8e8f0;--mute:#9a9aab;--line:#3a3a4a;--fill:#262633;--bg:#14141c;--card:#1c1c26;--accent:#8b98f0}}
+:root[data-theme="dark"]{--ink:#e8e8f0;--mute:#9a9aab;--line:#3a3a4a;--fill:#262633;--bg:#14141c;--card:#1c1c26;--accent:#8b98f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 system-ui,sans-serif;padding:20px 16px}
+.wrap{max-width:1200px;margin:auto}h1{font-size:22px;margin:0 0 4px}h2{font-size:17px;margin:28px 0 10px}.m{color:var(--mute)}
+table{border-collapse:collapse;width:100%;background:var(--card);font-size:13px}th,td{border:1px solid var(--line);padding:6px 8px;text-align:left;vertical-align:top}th{background:var(--fill)}
+.tw{overflow-x:auto}
+.grid{display:flex;flex-wrap:wrap;gap:22px}
+.ph{width:270px;max-width:100%;background:var(--card);border:2px solid var(--ink);border-radius:22px;padding:12px;display:flex;flex-direction:column;gap:7px;min-height:470px}
+.cap{font-weight:700;font-size:13px;margin-bottom:6px}.cap span{color:var(--mute);font-weight:400;display:block}
+.bar{display:flex;justify-content:space-between;font-size:11px;color:var(--mute);border-bottom:1px solid var(--line);padding-bottom:6px}
+.h{font-weight:700;font-size:15px}.t{font-size:12px;color:var(--mute)}
+.f{border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:12px;color:var(--mute)}
+.k{display:flex;justify-content:space-between;font-size:12px;border-bottom:1px dashed var(--line);padding:3px 0}.k b{color:var(--ink)}
+.box{background:var(--fill);border:1px dashed var(--line);border-radius:8px;display:grid;place-items:center;font-size:11px;color:var(--mute);padding:14px;text-align:center}
+.c{font-size:12px;display:flex;gap:6px}.c:before{content:"";width:12px;height:12px;border:1.5px solid var(--ink);border-radius:3px;flex:0 0 auto;margin-top:2px}
+.b,.g{border-radius:8px;padding:9px;text-align:center;font-weight:700;font-size:12.5px}.b{background:var(--ink);color:var(--card)}.g{border:1.5px solid var(--ink)}
+.n{font-size:10.5px;color:var(--mute);text-align:center;border-top:1px solid var(--line);padding-top:5px}
+.sp{flex:1}.nav{display:flex;justify-content:space-around;font-size:10px;color:var(--mute);border-top:1px solid var(--line);padding-top:6px}
+.tag{display:inline-block;font-size:10px;border:1px solid var(--line);border-radius:99px;padding:1px 7px;margin-left:4px;color:var(--mute);font-weight:600}
+</style></head><body><div class="wrap">
+<h1>thrifti credit: screens and wireframes</h1>
+<p class="m">Draft for review, 12 November 2026. Layout and content only, no visual design yet. All numbers are placeholders. Includes today's decisions: no coins or badges, the tree (roots, flowers, leaves, fruit, winter), and TM on thrifti and CARE.</p>
+
+<h2>1. The screens needed (15)</h2>
+<div class="tw"><table>
+<tr><th>#</th><th>Screen</th><th>Job</th><th>Group</th></tr>
+<tr><td>1</td><td>Welcome</td><td>Explain thrifti in one line, start</td><td>Getting started</td></tr>
+<tr><td>2</td><td>Sign up</td><td>Create account, verify phone or email</td><td>Getting started</td></tr>
+<tr><td>3</td><td>Consent and rights</td><td>Choose what we see; EU-standard rights</td><td>Getting started</td></tr>
+<tr><td>4</td><td>Your card debt</td><td>Cards, other loans, income, years at address</td><td>Your file</td></tr>
+<tr><td>5</td><td>Add evidence</td><td>Link bank, upload rent, bills, CRA income</td><td>Your file</td></tr>
+<tr><td>6</td><td>Confirm habits</td><td>Check what we found, correct, record hardship</td><td>Your file</td></tr>
+<tr><td>7</td><td>CARE rating</td><td>Score, core vs add-ons, plain reasons</td><td>Your rating</td></tr>
+<tr><td>8</td><td>Points table</td><td>Every criterion, your points, the maximum</td><td>Your rating</td></tr>
+<tr><td>9</td><td>What-if simulator</td><td>Move a slider, see the rating change</td><td>Your rating</td></tr>
+<tr><td>10</td><td>What it could save</td><td>Indicative saving, not an offer</td><td>Your loan</td></tr>
+<tr><td>11</td><td>Human review</td><td>Status, decision log, ask for review</td><td>Your loan</td></tr>
+<tr><td>12</td><td>Loan offer</td><td>Amount, rate, payment, accept</td><td>Your loan</td></tr>
+<tr><td>13</td><td>Home</td><td>Rating, tree, next step</td><td>Everyday</td></tr>
+<tr><td>14</td><td>Tree detail</td><td>Each branch, what grows it, winter</td><td>Everyday</td></tr>
+<tr><td>15</td><td>My data and settings</td><td>Download, change consent, delete</td><td>Everyday</td></tr>
+<tr><td>R</td><td>Reviewer screen (staff only)</td><td>Person reads AI-prepared file and decides</td><td>Back office</td></tr>
+</table></div>
+
+<h2>2. Wireframes</h2>
+<div class="grid" id="g"></div>
+<p class="m" style="margin-top:20px">Next: once you approve the list and layouts, these get the visual design from the approved look.</p>
+</div>
+<script>
+const S=[
+["1 Welcome","Getting started",["h:thrifti™ credit","t:Your reliability should lower your rate.","box:Illustration: a small tree growing","t:How it works: 1 share how you pay, 2 get your CARE™ rating, 3 we apply for a lower-rate loan for you","n:Research preview: no loans offered yet","sp","b:Get started","g:I have an account"]],
+["2 Sign up","Getting started",["h:Create your account","f:First name","f:Phone or email","f:Create password","t:We send a code to confirm it is you","sp","b:Send code","n:No credit check to sign up"]],
+["3 Consent and rights","Getting started",["h:You decide what we see","c:Bank accounts (read-only)","c:Rent records","c:Utility and phone bills","c:My CRA income document, uploaded by me","c:Let thrifti apply for a loan for me and share my file with the funding partner","box:Your rights: a plain reason for every decision, a person reviews every decision, ask for a review any time. We never use social media or health data.","t:Withdraw or delete any time","sp","b:I agree to the selected items"]],
+["4 Your card debt","Your file",["h:What are you carrying?","f:Card 1: balance $","f:Limit $   Rate %","g:+ Add another card","f:Other loans: months left","f:Monthly take-home income (a range is fine)","f:Years at current address","k:Interest you pay a year|$1,320","sp","b:Next"]],
+["5 Add evidence","Your file",["h:Show how you pay","g:Connect bank (secure, read-only)","g:Upload statements (PDF)","g:Rent: lease and receipts","g:Utility and phone bills","g:CRA notice of assessment","g:Credit report (optional)","k:Your file|3 of 6 added","t:Sharing more never lowers your rating","sp","b:Continue"]],
+["6 Confirm habits","Your file",["h:Here is what we found","k:Rent on time|14 of 14 months","k:Bills on time|23 of 24","k:Saved on payday|9 of 12","k:Card paid above minimum|11 of 12","g:Something wrong? Correct or explain","box:Had a hard stretch? Record it as hardship. It is scored separately and pauses, never resets.","sp","b:Looks right"]],
+["7 CARE rating","Your rating",["h:Your CARE™ rating","box:760 on a 0 to 999 scale, with bands","k:Core: 12 standard criteria|612","k:thrifti add-ons|+148","t:Helped you: rent on time 14 months","t:Held you back: card use above 70%","g:See the full points table","g:Try the what-if simulator","sp","b:See what it could save","nav"]],
+["8 Points table","Your rating",["h:Every point, shown","k:Payment delays|232 / 264","k:Oldest bank account|41 / 69","k:Time at address|66 / 94","k:Recent applications|94 / 117","k:+ 8 more core criteria|","k:Rent on time (add-on)|+55","k:Bills on time (add-on)|+38","t:Add up the points yourself. Nothing is hidden.","sp","g:Ask a person about a line","nav"]],
+["9 What-if simulator","Your rating",["h:What if...","box:Slider: card use 70% → 30%","box:Slider: months of rent on time","box:Toggle: add CRA income document","k:Rating now|760","k:Rating after|780","t:Estimate only. Real changes take a month to show.","sp","g:Back to my rating","nav"]],
+["10 What it could save","Your loan",["h:What a thrifti loan could save","n:Indicative, not an offer","k:Your card rate now|21.99%","k:Typical rate for your rating|9% to 12%","box:Slider: pay off in 2, 3 or 4 years","k:Possible saving|$1,000 to $1,300","sp","b:Apply through thrifti","nav"]],
+["11 Human review","Your loan",["h:A person checks your file","box:Steps: received → in review → decided","t:AI prepares your file. A person decides. Never AI alone.","g:Read the decision log","g:Disagree? Request a review","g:Book a 15 minute call (optional)","sp","b:OK","nav"]],
+["12 Loan offer","Your loan",["h:Your thrifti™ credit loan","box:$6,000 to pay off 2 cards","k:Rate|10.50%","k:Term|3 years","k:Monthly payment|$195","t:Rate step-down: 12 on-time payments lowers it 0.50%","t:We apply for you. You do not call anyone.","sp","b:Accept and pay off my cards","g:Not ready? Free credit counselling","n:Funded by [partner credit union]"]],
+["13 Home","Everyday",["bar","h:Good evening, Maya","box:CARE™ 760, 0 to 999 bar, up 18 this month","box:Care™ for your tree (small): roots, flowers, leaves, fruit","t:Next step: add your CRA document","k:Next rating update|in 30 days","sp","nav"]],
+["14 Tree detail","Everyday",["h:Care™ for your tree","box:Large tree, tap any branch","k:Roots: linked accounts|2 of 3","k:Flowers: essentials on time|12","k:Leaves: everyday within means|13","k:Fruit: 12-month habits|2","t:Tap a branch: see its months and what grows it","box:Winter: a hard month pauses growth, nothing is cut down","sp","nav"]],
+["15 My data and settings","Everyday",["h:My data","g:Download everything we hold","g:Change what I share","g:Delete my account and data","h:Settings","k:Notifications|On","k:Dark mode|System","k:Language|English","sp","nav"]],
+["R Reviewer (staff)","Back office",["h:File #1042","k:AI suggestion|Approve, 10.50%","k:CARE|760","box:Evidence: statements, rent, CRA document","t:Reasons the AI gave, line by line","f:Reviewer note (required)","sp","b:Approve","g:Decline with reason","g:Ask the customer a question"]]];
+const g=document.getElementById('g');
+for(const [name,grp,items] of S){const w=document.createElement('div');let h=`<div class="cap">${name}<span>${grp}</span></div><div class="ph"><div class="bar"><span>9:41</span><span>thrifti™</span></div>`;
+for(const it of items){if(it=="sp"){h+='<div class="sp"></div>';continue}if(it=="nav"){h+='<div class="nav"><span>Home</span><span>Rating</span><span>Add</span><span>Loan</span><span>Me</span></div>';continue}if(it=="bar")continue;
+const i=it.indexOf(':'),t=it.slice(0,i),v=it.slice(i+1);
+if(t=="k"){const [a,b]=v.split('|');h+=`<div class="k"><span>${a}</span><b>${b}</b></div>`}else h+=`<div class="${t}">${v}</div>`}
+w.innerHTML=h+'</div>';g.appendChild(w)}
+</script></body></html>
