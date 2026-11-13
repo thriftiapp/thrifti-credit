@@ -21,6 +21,7 @@ const DB = {
   ],
   habits: [['Rent on time', '14 of 14 months'], ['Bills on time', '23 of 24'], ['Saved on payday', '9 of 12'], ['Card paid above minimum', '11 of 12']],
   hardship: false,
+  reminders: [['Nov 28', 'Rent $1,450'], ['Dec 2', 'Hydro bill $86'], ['Dec 5', 'Card 1 minimum $126']],
   review: { step: 2, reviewer: 'a person', received: '12 Nov' },
   loanRate: 10.5
 };
@@ -44,6 +45,7 @@ const api = {
     const score = Math.round(300 + 650 * Object.keys(w).reduce((a, k) => a + w[k] * parts[k], 0));
     return { score: Math.min(999, score), parts };
   },
+  monthlyCardInterest: () => DB.cards.reduce((a, c) => a + c.balance * c.rate / 1200, 0),
   band(s) { return s >= 776 ? 'Very good' : s >= 709 ? 'Good' : s >= 642 ? 'Fair' : 'Building'; },
   level(p) { return p >= 0.8 ? 'Strong' : p >= 0.6 ? 'Good' : 'Fair'; },
   payment(principal, ratePct, months) {

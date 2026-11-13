@@ -22,3 +22,7 @@ input.in,textarea.in{font:inherit;width:100%}
 input[type=range]{width:100%;accent-color:var(--brand);margin:8px 0 2px}
 .sl{display:block;padding:6px 0 10px}
 @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+.goal{position:relative;height:10px;border-radius:99px;background:var(--line);margin-top:6px}.goal i{display:block;height:100%;border-radius:99px;background:#c0392b}
+.goal span{position:absolute;top:-4px;width:3px;height:18px;border-radius:2px;background:var(--ok)}
+.stage{display:flex;gap:10px;align-items:flex-start;padding:8px 0;font-size:14px}.stage .sdot{flex:0 0 26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;background:var(--line);color:var(--mute)}
+.stage:first-of-type .sdot{background:var(--ok);color:#fff}.stage.now .sdot{background:var(--brand);color:#fff}.stage.now b{color:var(--brand)}

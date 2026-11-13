@@ -43,7 +43,8 @@ function gauge(score) {
 }
 
 const PARTS = [['onTime', 'Paying on time', 'Cards, loans, rent, bills'], ['creditUse', 'How much credit you use', 'All cards and lines together'], ['history', 'Account history', 'Age and mix of your accounts'], ['newCredit', 'New credit', 'Recent applications'], ['cashFlow', 'Everyday cash flow', 'Income, essentials, savings']];
-const LCOL = { Strong: 'var(--ok)', Good: 'var(--brand)', Fair: 'var(--amber)' };
+const STAGES = [['Seed', 'You joined and shared the basics'], ['Sapling', '3 months of essentials on time'], ['Young tree', '12 months on time, card use under 50%'], ['Full tree', '24 months on time, card use under 30%']];
+const LCOL ={ Strong: 'var(--ok)', Good: 'var(--brand)', Fair: 'var(--amber)' };
 
 const screens = {
   welcome: () => `<div class="body" style="justify-content:center;gap:18px"><div class="logo" style="font-size:24px"><div class="badge" style="width:40px;height:40px;font-size:20px">t</div>thrifti${TM} credit</div>
@@ -110,7 +111,7 @@ const screens = {
     ${card(kv('Your card rate now', api.get().cards[0].rate + '%') + kv('thrifti loan rate', `<span style="color:var(--brand)">${api.get().loanRate.toFixed(2)}%</span>`) + kv('Term', state.term / 12 + ' years') + kv('Monthly payment', money(o.pay), 1))}
     <div class="save">You save about ${money(o.saved)} in interest compared with paying the same amount on your cards</div>
     ${card('<h3>Rate step-downs</h3><div class="m">Pay on time for 12 months and your rate drops by 0.50%. A recorded hardship pauses the count, it never resets it.</div><div style="margin-top:10px" class="bar"><i style="width:0%"></i></div><div class="m" style="margin-top:6px">0 of 12 on-time payments</div>')}
-    ${state.accepted ? card(ink('Done. We are sending the funds straight to your cards. You do not need to call anyone.'), 'background:var(--ok-l);border:0') : '<button class="btn" id="accept" type="button">Accept and pay off my cards</button>'}
+    ${state.accepted ? card(`<h3>${api.get().cards.length} cards will be paid off</h3>` + ink('We are sending the funds straight to your cards. You do not need to call anyone. Your tree grows its first fruit when the first card reaches $0. Close the card if you can, to keep it at $0.'), 'background:var(--ok-l);border:0') : '<button class="btn" id="accept" type="button">Accept and pay off my cards</button>'}
     <a class="btn ghost" href="https://www.canada.ca/en/financial-consumer-agency/services/debt/debt-help.html" target="_blank" rel="noopener">Not ready? Free debt help</a><div class="note">Funded by <b>[partner credit union]</b></div></div>${nav('save')}`; },
 
   home: () => { const r = api.rating();
@@ -119,9 +120,13 @@ const screens = {
     <a class="card hero" href="#rating" style="display:block"><div class="row2"><div><div class="s">Your CARE${TM} rating</div><div class="big">${r.score}</div></div>${pill(api.band(r.score), 'p-b')}</div>${gauge(r.score)}<div class="s" style="margin-top:6px">Rent on time 14 months in a row.</div></a>
     <a class="card" href="#tree" style="display:block"><div class="row2"><h3 style="margin:0">Care${TM} for your tree</h3>${pill('Sapling', 'p-ok')}</div>${tree(1)}
     <div class="legend"><span><i style="background:#f28fb0"></i>Essentials</span><span><i style="background:#2bb37d"></i>Everyday</span><span><i style="background:#F5A524"></i>Rewards</span><span><i style="background:#a88a6a;border-radius:2px"></i>Roots</span></div></a>
-    <a class="card" href="#evidence" style="display:flex;gap:12px;align-items:center"><div style="font-size:24px;color:var(--brand)">＋</div><div style="flex:1"><b>Add your CRA notice</b><div class="m">Optional. Earns 100 points.</div></div></a></div>${nav('home')}`; },
+    <a class="card" href="#save" style="display:block"><div class="row2"><h3 style="margin:0">Your cards this month</h3><b style="color:#c0392b">${money(api.monthlyCardInterest())} interest</b></div>
+    <div class="row2" style="margin-top:10px;font-size:13px"><span>Card use</span><b>${api.totals().use}% · goal under 30%</b></div><div class="goal"><i style="width:${Math.min(100, api.totals().use)}%"></i><span style="left:30%"></span></div>
+    <div class="m" style="margin-top:6px">Paying cards down grows fruit on your tree.</div></a>
+    <div class="card"><h3>Coming up</h3>${api.get().reminders.map(([d, t]) => `<div class="kv"><span class="m">${d}</span><b>${t}</b></div>`).join('').replace(/<div class="kv">(?![\s\S]*<div class="kv">)/, '<div class="kv" style="border:0">')}</div></div>${nav('home')}`; },
 
   tree: () => `${hdr('Care' + TM + ' for your tree', 'home')}<div class="body">${card(tree())}
+    ${card('<h3>Your stage in the club</h3>' + STAGES.map(([n, t], i) => `<div class="stage${i === 1 ? ' now' : ''}"><span class="sdot">${i < 1 ? '✓' : i + 1}</span><div><b>${n}${i === 1 ? ' · you are here' : ''}</b><div class="m">${t}</div></div></div>`).join('') + '<div class="note" style="border:0;text-align:left">Open to everyone. No score needed. Stages are earned by habits, never bought.</div>')}
     ${card(kv('Roots: accounts linked', '2 of 3') + kv('Flowers: essentials on time', '12') + kv('Leaves: everyday within means', '13') + kv('Fruit: 12-month habits', '2', 1))}
     ${card('<h3>How your tree grows</h3>' + ink('<b>Roots</b> are the accounts you add. <b>Flowers</b> bloom on essentials paid on time. <b>Leaves</b> grow on everyday spending kept within your means. <b>Fruit</b> ripens after 12 on-time months. A hard month is <b>winter</b>: growth pauses, nothing is cut down.'), blue)}</div>${nav('home')}`,
 
