@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en-CA">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>thrifti | credit that looks at how you actually manage money</title>
+<meta name="description" content="thrifti credit is researching fairer credit for Canadians, based on real money habits, not just a credit score. Research stage. Not a lender.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="thrifti">
+<meta property="og:url" content="https://credit.thrifti.app/v2/">
+<meta property="og:title" content="thrifti | credit that looks at how you actually manage money">
+<meta property="og:description" content="Researching fairer credit for Canadians, based on real habits, not just a credit score. A research project, not a lender.">
+<meta property="og:image" content="https://credit.thrifti.app/img/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="thrifti: credit that looks at how you actually manage money">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="thrifti | credit that looks at how you actually manage money">
+<meta name="twitter:description" content="Researching fairer credit for Canadians, based on real habits, not just a credit score. A research project, not a lender.">
+<meta name="twitter:image" content="https://credit.thrifti.app/img/og-image.png">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../v2/v2.css">
+<style>.facts{background:var(--tint);padding:56px 0}.facts .fx-stage{position:relative;min-height:230px}.fx{position:absolute;inset:0;margin:0;opacity:0;transform:translateY(12px);transition:opacity .6s,transform .6s;pointer-events:none}.fx.on{opacity:1;transform:none;pointer-events:auto}.fx-big{font-size:clamp(48px,9vw,84px);font-weight:800;letter-spacing:-.03em;color:var(--primary);margin:0;line-height:1}.fx-txt{font-size:clamp(18px,2.4vw,22px);max-width:40ch;margin:10px 0 8px}.fx figcaption{font-size:14px;color:var(--mfg)}.fx-dots{display:flex;gap:10px;margin-top:18px}.fx-dots button{width:12px;height:12px;border-radius:50%;border:0;background:var(--border);cursor:pointer;padding:0}.fx-dots button[aria-selected=true]{background:var(--primary)}@media (max-width:600px){.facts .fx-stage{min-height:300px}}@media (prefers-reduced-motion:reduce){.fx{transition:none}}</style>
+</head>
+<body>
+<header id="nav" class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="thrifti, back to top"><img src="../../img/logo-badge.svg" alt="" width="34" height="34"><span>thrifti</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#rewind">The rewind</a><a href="#dial">Your rate</a><a href="#how">How it decides</a><a href="#questions">Questions</a>
+    </nav>
+    <a class="btn btn-primary nav-cta js-waitlist" href="#waitlist">Join the research list</a>
+    <button id="menu-btn" class="menu-btn" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+<section id="top" class="hero">
+  <div class="glow" aria-hidden="true"></div>
+  <div class="wrap hero-grid">
+    <div>
+      <p class="pill-dark">Canada · Research preview</p>
+      <h1 id="tagline">Credit that looks at how you <em>actually</em> manage money</h1>
+      <p class="human-line on-dark">AI reads the numbers. A person makes the call. You can always talk to a real person.</p>
+      <p class="lede">Millions of Canadians pay 20 percent or more on credit cards, even when they pay rent and bills on time. We are researching whether debt could be priced more fairly, based on real habits, not just a credit score.</p>
+      <div class="ctas">
+        <a class="btn btn-amber" href="#rewind">See your next 12 years <span aria-hidden="true">&darr;</span></a>
+        <a class="btn btn-ghost js-waitlist" href="#waitlist">Join the research list</a>
+      </div>
+      <p class="trust">&#128274; Runs on your device · Not a loan offer · Nothing saved</p>
+    </div>
+    <div class="artifacts">
+      <div class="ticker reveal">
+        <p class="live"><span class="dot"></span>Live · estimate</p>
+        <p>Estimated credit card interest building up across Canada while you read this page: about <b id="per-sec">$420</b> every second.</p>
+        <p class="tick" id="ticker" aria-live="off">$0</p>
+        <p class="tick-sub">since you opened this page*</p>
+      </div>
+      <div class="statement reveal">
+        <div class="st-head"><div><b>Everyday card ·4417</b><small>Statement · November 2026</small></div><span class="apr-pill">21.99% APR</span></div>
+        <dl>
+          <div><dt>Balance</dt><dd>$6,240.00</dd></div>
+          <div><dt>Interest this month</dt><dd class="ember" id="stmt-interest">$114.35</dd></div>
+          <div><dt>Minimum payment</dt><dd>$156.00</dd></div>
+        </dl>
+        <p class="callout" id="stmt-callout"></p>
+      </div>
+      <p class="foot">*Illustrative estimate: $131 billion in Canadian credit card balances (Equifax Canada, Q4 2025) × 46%, the share of cardholders who carry a balance from month to month (Bank of Canada staff analytical note 2024-18; used here as an assumed share of balances charged interest) × 21.99%, a common card rate (TD Cash Back Visa, September 2026) ÷ 31,556,952 seconds in a year. Statement math: fixed minimum, interest compounded monthly, no fees.</p>
+    </div>
+  </div>
+</section>
+
+<section id="facts" class="facts" aria-label="What the research shows">
+  <div class="wrap">
+    <p class="eyebrow">What the research shows</p>
+    <div class="fx-stage" aria-live="polite">
+      <figure class="fx on">
+        <p class="fx-big">54%</p>
+        <p class="fx-txt">of people in German debt counselling got there through job loss, illness, a separation or a failed business. Poor budgeting: 11.7%.</p>
+        <figcaption>Destatis, over-indebtedness statistics 2025 (about 187,000 people)</figcaption>
+      </figure>
+      <figure class="fx">
+        <p class="fx-big">3&times;</p>
+        <p class="fx-txt">People on low incomes in the EU were more than three times as likely to be behind on utility bills (16.8% compared with 5.1%), but far less so on loans (4.6% compared with 2.4%).</p>
+        <figcaption>Eurostat, EU-SILC 2025</figcaption>
+      </figure>
+      <figure class="fx">
+        <p class="fx-big">90 days</p>
+        <p class="fx-txt">New EU credit rules give more than 90 days behind as an example of financial difficulty, and require lenders to offer forbearance first. Our research rating tests a longer window: 4 months, with the reason weighed.</p>
+        <figcaption>Directive (EU) 2023/2225, recital 81 and Article 35</figcaption>
+      </figure>
+    </div>
+    <div class="fx-dots" role="tablist" aria-label="Choose a fact"></div>
+  </div>
+</section>
+
+<section id="rewind" class="band">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">01 · The consequence</p>
+      <h2>Your next 12 years, run twice.</h2>
+      <p>No sliders to start. This is the math your card runs every month on the minimum payment. Then the same years again, at an example rate that good habits could earn. Flip it and watch the calendar change.</p>
+    </div>
+    <div class="card reveal">
+      <div class="rw-top">
+        <div class="tabs" role="tablist" aria-label="Interest rate">
+          <button role="tab" data-mode="bank" aria-selected="true">Your card · 21.99%</button>
+          <button role="tab" data-mode="thrifti" aria-selected="false">thrifti example · 9.4%</button>
+        </div>
+        <p class="meta">&#128274; <span id="rw-meta"></span></p>
+      </div>
+      <div id="strip" class="strip"></div>
+      <p id="summary" class="summary"></p>
+      <p id="trap" class="trap" role="alert" hidden></p>
+      <button id="expand" class="link-btn" aria-expanded="false" aria-controls="yours">Make the numbers yours</button>
+      <div id="yours" class="yours" hidden>
+        <label>Card balance ($)<input id="in-bal" type="number" min="1000" max="30000" step="100" value="6240" inputmode="numeric"></label>
+        <label>Monthly payment ($)<input id="in-pay" type="number" min="25" max="1500" step="5" value="156" inputmode="numeric"></label>
+        <p id="rw-note" class="note"></p>
+      </div>
+      <p class="fine">Illustration only: fixed payment, interest compounded monthly, no fees. The 9.4% figure is a worked example of habit-priced credit, not an offer. thrifti does not lend money today.</p>
+    </div>
+  </div>
+</section>
+
+<section id="dial" class="band tint">
+  <div class="wrap">
+    <div class="head reveal">
+      <p class="eyebrow">02 · The mechanism</p>
+      <h2>Your habits could shape the rate.</h2>
+      <p>Not a three-digit score. Three kinds of evidence a credit score does not see. Switch them on to see how an example rate could move.</p>
+    </div>
+    <div class="card dial-grid reveal">
+      <div>
+        <div class="habit"><span class="ico" aria-hidden="true">$</span><div><b id="h1">Every bill on time, 12 months straight</b><small>Rent, phone, hydro: real payments that usually never reach a credit report.</small></div><span class="delta">&minus;6.5%</span><button role="switch" aria-checked="false" aria-labelledby="h1" data-delta="6.5"><i></i></button></div>
+        <div class="habit"><span class="ico" aria-hidden="true">&#9673;</span><div><b id="h2">Auto-saves every payday</b><small>A standing $25+ deposit, weeks-long streak, never paused.</small></div><span class="delta">&minus;3.2%</span><button role="switch" aria-checked="false" aria-labelledby="h2" data-delta="3.2"><i></i></button></div>
+        <div class="habit"><span class="ico" aria-hidden="true">&#10003;</span><div><b id="h3">Spends under budget, 3 months running</b><small>Money out below money in, checked from transactions.</small></div><span class="delta">&minus;2.9%</span><button role="switch" aria-checked="false" aria-labelledby="h3" data-delta="2.9"><i></i></button></div>
+        <p class="fine">How thrifti would read it: with read-only access you approve, habit evidence is checked from your real transactions. Never self-reported, never sold. The rate changes shown are a worked example, not an offer.</p>
+      </div>
+      <div class="gauge-panel">
+        <svg viewBox="0 0 180 100" class="gauge" aria-hidden="true">
+          <path d="M20 90 A70 70 0 0 1 160 90" class="track"/>
+          <path id="arc" d="M20 90 A70 70 0 0 1 160 90" class="arc"/>
+          <circle id="marker" r="4" class="marker"/>
+        </svg>
+        <p class="mk-label">9.4% example</p>
+        <p class="apr" aria-live="polite"><span id="apr-num">22.0</span><small>%</small></p>
+        <p class="apr-label">Example rate, live</p><p class="badge-ex">Illustration, not an offer</p>
+        <p id="dial-cap" class="cap"></p>
+        <div class="dollars">
+          <p class="dh">$8,400 balance · $250/month</p>
+          <div class="drow"><span>Today, at 21.99%</span><b id="row-bank" class="ember"></b></div>
+          <div class="drow"><span>At your dial, <span id="dial-apr"></span></span><b id="row-dial"></b></div>
+          <p id="save" class="save mint" hidden></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="band">
+  <div class="wrap narrow">
+    <div class="head reveal">
+      <p class="eyebrow">03 · The decision</p>
+      <h2>Underwriting in the open.</h2>
+      <p>A decision should read like a receipt, not a black box. Two made-up example files: one with strong habits, and one we would say "not yet" to.</p>
+    </div>
+    <div class="tabs center" role="tablist" aria-label="Example file">
+      <button role="tab" data-file="A" aria-selected="true">File A · strong habits</button>
+      <button role="tab" data-file="B" aria-selected="false">File B · recent missed payments</button>
+    </div>
+    <div id="log-card" class="log reveal"><p class="log-head">thrifti decision log · example only</p><div id="log" aria-live="polite"></div></div>
+
+<div class="hai">
+  <p class="hai-badge"><svg class="hai-badge-ic" viewBox="0 0 48 24" aria-hidden="true"><circle cx="9" cy="7" r="4" fill="currentColor"/><path d="M2 21c0-4 3-7 7-7s7 3 7 7z" fill="currentColor"/><path d="M24 12h4" stroke="currentColor" stroke-width="2"/><path d="M39 3l2.2 5.8L47 11l-5.8 2.2L39 19l-2.2-5.8L31 11l5.8-2.2z" fill="currentColor"/></svg><span>Human + AI, working together</span></p>
+  <div class="hai-grid">
+    <div class="hai-card"><span class="hai-n">1</span><h3>You share</h3><p>Your rent, bills and income, in your own words or, later, by connecting your bank.</p></div>
+    <div class="hai-card"><span class="hai-n">2</span><h3>AI helps</h3><p>It finds the patterns a credit score misses, and explains them in plain words.</p></div>
+    <div class="hai-card"><span class="hai-n">3</span><h3>A person decides</h3><p>A real person reviews every case before anything happens. You can always talk to them.</p></div>
+  </div>
+  <p class="hai-promise"><strong>No decision by machine alone.</strong> In a pilot, every &ldquo;no&rdquo; would be reviewed by a person and come with a reason and next steps. We plan to work with credit unions and nonprofit credit counsellors, so real people are part of every step.</p>
+  <div class="people-strip">
+    <p><strong>The people behind thrifti.</strong> A small team with long experience in finance and financial inclusion. Your questions go to a person, not a bot.</p>
+    <a class="hai-btn" href="mailto:contact@thrifti.app?subject=Talk%20to%20a%20person">Talk to a person</a>
+  </div>
+</div>
+    <p class="flow">Join the research list &rarr; If the research supports it, a pilot with a licensed credit union partner &rarr; One clear answer, in plain words</p>
+  </div>
+</section>
+
+<section id="waitlist" class="band tint">
+  <div class="wrap wl-grid">
+    <div class="head left reveal">
+      <p class="eyebrow">Research list</p>
+      <h2>Help shape a fairer way to price debt</h2>
+      <p>We want to hear from Canadians carrying high-interest card debt. It takes a minute. Joining involves no credit check, and you can ask us to delete your details any time.</p>
+    </div>
+    <div class="card wl-card reveal">
+      <p class="wl-big">Join the research list</p>
+      <p>Name, email and province, plus a few optional questions.</p>
+      <a class="btn btn-primary wide js-waitlist" href="#waitlist">Join the research list</a>
+      <p class="fine">Free to join. No credit check to join. We never sell your data. Unsubscribe or ask us to delete it any time. <a href="../../privacy.html">Privacy</a></p>
+    </div>
+  </div>
+</section>
+
+<section id="questions" class="band">
+  <div class="wrap narrow">
+    <div class="head reveal">
+      <p class="eyebrow">Questions</p>
+      <h2>The short version</h2>
+      <p>Without the fine print.</p>
+    </div>
+    <div class="faq reveal">
+      <details><summary>Is this a loan application?</summary><p>No. thrifti does not lend money or check credit today. Joining the research list helps us build this with real people instead of assumptions.</p></details>
+      <details><summary>Will you check my credit?</summary><p>Not to join the list. We ask only for your name, email and province, and nothing is sent to a credit bureau. If a pilot ever runs, the lending partner would explain any checks before anything happens.</p></details>
+      <details><summary>Does joining affect my credit score?</summary><p>No. There is no credit check, no hard inquiry, and no contact with any bureau.</p></details>
+      <details><summary>How would thrifti see my habits without spying on me?</summary><p>Through a read-only connection you approve and can turn off, used only to check specific evidence: bills paid on time, savings streaks, spending under income. No data is sold, and the decision log shows you exactly what was read, like the examples above.</p></details>
+      <details><summary>Are the rates on this page real offers?</summary><p>No. The 9.4% rate and the habit discounts are worked examples to show how habit-based pricing could work. Real rates would be set by a licensed lending partner.</p></details>
+      <details><summary>Will this become a product?</summary><p>Only if the research shows it really helps, and only with a licensed lending partner. There is no launch date. People on the research list hear first.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap foot-in">
+    <div><a class="logo" href="#top"><img src="../../img/logo-badge.svg" alt="" width="30" height="30"><span>thrifti</span></a><p id="foot-tag">Credit that looks at how you actually manage money.</p></div>
+    <div class="right"><p>&copy; 2026 thrifti. Research stage.</p><p>Not a lender. Not an offer of credit. Nothing here is financial advice.</p><p><a href="../../privacy.html">Privacy</a> · <a href="mailto:contact@thrifti.app">contact@thrifti.app</a></p></div>
+  </div>
+</footer>
+<script src="../../v2/v2.js"></script>
+<a class="talk-float" href="mailto:contact@thrifti.app?subject=Talk%20to%20a%20person">&#128172; Talk to a person</a>
+<script>(function(){var f=[].slice.call(document.querySelectorAll(".fx")),d=document.querySelector(".fx-dots"),i=0,t;function show(n){f[i].classList.remove("on");b[i].setAttribute("aria-selected","false");i=n;f[i].classList.add("on");b[i].setAttribute("aria-selected","true")}var b=f.map(function(_,n){var x=document.createElement("button");x.setAttribute("role","tab");x.setAttribute("aria-label","Fact "+(n+1));x.setAttribute("aria-selected",n?"false":"true");x.onclick=function(){show(n);go()};d.appendChild(x);return x});function go(){clearInterval(t);if(!matchMedia("(prefers-reduced-motion: reduce)").matches)t=setInterval(function(){show((i+1)%f.length)},7000)}var s=document.querySelector(".fx-stage");s.onmouseenter=function(){clearInterval(t)};s.onmouseleave=go;go()})();</script>
+</body>
+</html>
