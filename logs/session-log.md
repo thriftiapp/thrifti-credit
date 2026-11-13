@@ -77,3 +77,5 @@ Next
 - Working prototype built: app/ (16 screens, live forms, what-if, loan maths). Not deployed.
 - All work on D; C copies backed up in _chats/c-drive-copy-2026-11-12.
 - Next: investor deck with verified statistics.
+
+- Investor deck: docs/17_thrifti_investor_deck.pptx (12 slides, built by docs/deck/build-deck.js, screens from the app). Stats checked on Equifax, FCAC/Bank of Canada, IRCC, FinRegLab, Windmill pages. Amber boxes mark where our survey will add data.
